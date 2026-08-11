@@ -11,7 +11,85 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
-<style id="real-project-gallery-css">
+<style id="custom-fixes-css">
+/* إصلاح تنسيق زر اللغة */
+.lang-switch {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.lang-switch button {
+  display: inline-block !important;
+  padding: 6px 16px;
+  border: 1.5px solid #0f2b48;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #0f2b48;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.lang-switch button.active, 
+.lang-switch button:hover {
+  background: #0f2b48;
+  color: #ffffff;
+}
+
+/* إصلاح تراكب الشعار والنص في قسم الهيرو */
+.hero {
+  position: relative;
+  padding: 80px 5%;
+}
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.hero-content {
+  flex: 1;
+  text-align: left;
+}
+html[dir="rtl"] .hero-content {
+  text-align: right;
+}
+.hero-logo-wrap {
+  flex: 0 0 320px;
+  max-width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-logo-wrap img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+@media (max-width: 868px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .hero-content {
+    text-align: center;
+  }
+  html[dir="rtl"] .hero-content {
+    text-align: center;
+  }
+  .hero-logo-wrap {
+    flex: 0 0 auto;
+    width: 200px;
+  }
+}
+
 .real-projects-section{padding:70px 5%;text-align:center}
 .real-projects-heading{max-width:850px;margin:0 auto 30px}
 .real-projects-heading .eyebrow{font-weight:800;letter-spacing:.12em;font-size:.78rem}
@@ -21,32 +99,92 @@
 .real-project-card:hover img{transform:scale(1.04)}
 .real-project-overlay{position:absolute;inset:auto 0 0 0;padding:12px;text-align:center;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-weight:700;opacity:0;transition:opacity .25s}
 .real-project-card:hover .real-project-overlay{opacity:1}
-.real-project-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:99999;padding:30px}
-.real-project-lightbox.open{display:flex}
-.real-project-lightbox img{max-width:92vw;max-height:88vh;object-fit:contain}
-.real-project-close{position:absolute;top:18px;right:25px;color:#fff;background:transparent;border:0;font-size:36px;cursor:pointer}
-.real-project-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;width:48px;height:48px;border-radius:50%;font-size:28px;cursor:pointer}
-.real-project-prev{left:20px}.real-project-next{right:20px}
-html[dir="rtl"] .real-project-prev{left:auto;right:20px}
-html[dir="rtl"] .real-project-next{right:auto;left:20px}
+
+/* قسم اتصل بنا */
+.contact-section {
+  padding: 80px 5%;
+  background: #0f2b48;
+  color: #ffffff;
+}
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+.contact-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.contact-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.12);
+}
+.contact-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background: #2382ca;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+.contact-info h3 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 6px;
+}
+.contact-info a, .contact-info p {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: block;
+  dir: ltr;
+}
+.contact-info a:hover {
+  color: #64b5f6;
+}
 </style>
 
 </head>
 <body>
 <header class="nav">
   <a class="brand" href="#home"><img src="logo.jpg" alt="Nal Al Tsheed logo"><span>NAL AL TSHEED</span></a>
-  <nav><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#equipment">Equipment</a><a href="#profile">Company Profile</a></nav>
-<div class="lang-switch" aria-label="Language"><button type="button" data-lang="en">English</button><button type="button" data-lang="ar">العربية</button></div></header>
+  <nav><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#equipment">Equipment</a><a href="#profile">Company Profile</a><a href="#contact">Contact Us</a></nav>
+  <div class="lang-switch" aria-label="Language">
+    <button type="button" data-lang="en">English</button>
+    <button type="button" data-lang="ar">العربية</button>
+  </div>
+</header>
 
 <main>
 <section id="home" class="hero">
   <div class="hero-overlay"></div>
-  <div class="hero-logo-wrap"><img class="hero-logo" src="logo.jpg" alt="Nal Al Tsheed Company Logo"></div>
-  <div class="hero-content">
-    <p class="eyebrow">NAL AL TSHEED COMPANY FOR ARCHITECTURAL CONTRACTING</p>
-    <h1>Nal Al Tsheed<br><span>Company for Architectural Contracting.</span></h1>
-    <p class="hero-copy"></p>
-    <a class="btn" href="#about">Explore the Company</a>
+  <div class="hero-container">
+    <div class="hero-content">
+      <p class="eyebrow">NAL AL TSHEED COMPANY FOR ARCHITECTURAL CONTRACTING</p>
+      <h1>Nal Al Tsheed<br><span>Company for Architectural Contracting.</span></h1>
+      <p class="hero-copy"></p>
+      <a class="btn" href="#about">Explore the Company</a>
+    </div>
+    <div class="hero-logo-wrap">
+      <img class="hero-logo" src="logo.jpg" alt="Nal Al Tsheed Company Logo">
+    </div>
   </div>
 </section>
 
@@ -125,11 +263,45 @@ html[dir="rtl"] .real-project-next{right:auto;left:20px}
     <button class="real-project-card" type="button" data-gallery-src="project-work-2-5.jpg" aria-label="View project work"><img src="project-work-2-5.jpg" alt="Real project work by Nal Al Tsheed" loading="lazy"><span class="real-project-overlay">View Image</span></button>
   </div>
 </section>
+
+<!-- قسم اتصل بنا -->
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <div class="section-head">
+      <span style="color:#2382ca">06</span>
+      <h2 style="color:#ffffff">Contact Us</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">✉</div>
+        <div class="contact-info">
+          <h3>Email Address</h3>
+          <a href="mailto:info@nalaltsheed.com">info@nalaltsheed.com</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <div class="contact-info">
+          <h3>Phone Number</h3>
+          <a href="tel:0552880208" dir="ltr">0552880208</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📱</div>
+        <div class="contact-info">
+          <h3>Phone Number</h3>
+          <a href="tel:0549100006" dir="ltr">0549100006</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer><div><img src="logo.jpg" alt="Nal Al Tsheed"><p>Nal Al Tsheed Company for Architectural Contracting</p></div><span></span></footer>
 
-<!-- ABOUT MODAL -->
+<!-- MODALS -->
 <div class="modal" id="aboutModal" aria-hidden="true"><div class="modal-backdrop" data-close="aboutModal"></div><div class="modal-dialog wide" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
   <button class="modal-close" data-close="aboutModal" aria-label="Close">×</button>
   <div class="modal-header"><span class="panel-kicker">COMPANY PROFILE · ABOUT US</span><h2 id="aboutTitle">Who Is Nal Al Tsheed?</h2></div>
@@ -143,7 +315,6 @@ html[dir="rtl"] .real-project-next{right:auto;left:20px}
     </div>
 </div></div>
 
-<!-- APPROACH MODAL -->
 <div class="modal" id="aboutScopeModal" aria-hidden="true"><div class="modal-backdrop" data-close="aboutScopeModal"></div><div class="modal-dialog wide" role="dialog" aria-modal="true" aria-labelledby="scopeTitle">
   <button class="modal-close" data-close="aboutScopeModal" aria-label="Close">×</button>
   <div class="modal-header"><span class="panel-kicker">COMPANY PROFILE · APPROACH</span><h2 id="scopeTitle">Expertise &amp; Client Approach</h2></div>
@@ -158,10 +329,9 @@ html[dir="rtl"] .real-project-next{right:auto;left:20px}
     </div>
 </div></div>
 
-<!-- PROJECTS MODAL -->
 <div class="modal" id="projectsModal" aria-hidden="true"><div class="modal-backdrop" data-close="projectsModal"></div><div class="modal-dialog xwide" role="dialog" aria-modal="true" aria-labelledby="projectsTitle">
   <button class="modal-close" data-close="projectsModal" aria-label="Close">×</button>
-  <div class="modal-header"><span class="panel-kicker">OUR PROJECTS</span><h2 id="projectsTitle">Selected Executed &amp; Ongoing Projects</h2><p></p></div>
+  <div class="modal-header"><span class="panel-kicker">OUR PROJECTS</span><h2 id="projectsTitle">Selected Executed &amp; Ongoing Projects</h2></div>
   <div class="modal-body">
     <div class="project-group"><h3>Executed Projects</h3><div class="responsive-table"><table class="data-table"><thead><tr><th>#</th><th>Project Name</th><th>Owner</th><th>Location</th><th>Scope of Work</th></tr></thead><tbody>
       <tr><td>01</td><td>Construction of the glass domes building at the Northern Border University</td><td>Northern Border University</td><td>Arar</td><td>Civil works</td></tr>
@@ -180,10 +350,9 @@ html[dir="rtl"] .real-project-next{right:auto;left:20px}
     </div>
 </div></div>
 
-<!-- EQUIPMENT MODAL -->
 <div class="modal" id="equipmentModal" aria-hidden="true"><div class="modal-backdrop" data-close="equipmentModal"></div><div class="modal-dialog xwide profile-dialog" role="dialog" aria-modal="true" aria-labelledby="equipmentTitle">
   <button class="modal-close" data-close="equipmentModal" aria-label="Close">×</button>
-  <div class="modal-header equipment-head"><span class="panel-kicker">المعـــــــدات · UPDATED EQUIPMENT</span><h2 id="equipmentTitle">Equipment &amp; Machinery</h2><p></p></div>
+  <div class="modal-header equipment-head"><span class="panel-kicker">المعـــــــدات · UPDATED EQUIPMENT</span><h2 id="equipmentTitle">Equipment &amp; Machinery</h2></div>
   <div class="modal-body" dir="rtl">
     <div class="equipment-intro"><p>نحترم الجهود العظيمة التي يقدمها جميع العاملين لدينا ونعتبرهم السبب الرئيسي في النجاح الذي حققناه. ففي شركة نال التشييد للمقاولات المعمارية نمتلك نخبة من المهندسين الأكفاء في جميع التخصصات، وقطاع واسع من الإداريين، ومن خلال قسم مراقبي الجودة نخطط للتطوير بناءً على أسس علمية سليمة، نوفر أيضاً عدداً هائلاً من السائقين، والعمال، والفنيين أصحاب الخبرة والحرفية.</p></div>
     <div class="responsive-table"><table class="data-table equipment-table"><thead><tr><th>م</th><th>المعدة</th><th>العلامة التجارية</th><th>العدد</th></tr></thead><tbody>
@@ -192,10 +361,9 @@ html[dir="rtl"] .real-project-next{right:auto;left:20px}
     </div>
 </div></div>
 
-<!-- PROFILE MODAL -->
 <div class="modal" id="profileModal" aria-hidden="true"><div class="modal-backdrop" data-close="profileModal"></div><div class="modal-dialog wide" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
   <button class="modal-close" data-close="profileModal" aria-label="Close">×</button>
-  <div class="modal-header"><span class="panel-kicker">OFFICIAL COMPANY PROFILE</span><h2 id="profileTitle">Profile Sections</h2><p>Interactive access to the principal sections of the supplied Company Profile.</p></div>
+  <div class="modal-header"><span class="panel-kicker">OFFICIAL COMPANY PROFILE</span><h2 id="profileTitle">Profile Sections</h2></div>
   <div class="profile-menu">
     <button data-modal="aboutModal"><b>01</b><span>Introduction &amp; About Us</span><em>Open →</em></button>
     <button data-modal="aboutScopeModal"><b>02</b><span>Expertise &amp; Client Approach</span><em>Open →</em></button>
@@ -207,7 +375,53 @@ html[dir="rtl"] .real-project-next{right:auto;left:20px}
 <script src="script.js"></script>
 <script id="nal-bilingual-script">
 (function(){
- const T={"Nal Al Tsheed Company for Architectural Contracting": "شركة نال التشييد للمقاولات المعمارية", "NAL AL TSHEED": "نال التشييد", "About": "من نحن", "Services": "الخدمات", "Projects": "المشاريع", "Equipment": "المعدات", "Company Profile": "ملف الشركة", "NAL AL TSHEED COMPANY FOR ARCHITECTURAL CONTRACTING": "شركة نال التشييد للمقاولات المعمارية", "Nal Al Tsheed": "نال التشييد", "Company for Architectural Contracting.": "للمقاولات المعمارية.", "Explore the Company": "استكشف الشركة", "About Us": "من نحن", "Who Is Nal Al Tsheed?": "من هي شركة نال التشييد؟", "Read the company introduction, identity, expertise and approach directly from the supplied Company Profile.": "اطّلع على مقدمة الشركة وهويتها وخبراتها ومنهجية عملها مباشرة من ملف الشركة المقدم.", "View full information": "عرض المعلومات كاملة", "Our Approach": "منهجيتنا", "See the profile's stated clients, areas of expertise and the way Nal Al Tsheed works with clients.": "اطّلع على العملاء ومجالات الخبرة وطريقة عمل نال التشييد مع العملاء كما وردت في ملف الشركة.", "Open details": "عرض التفاصيل", "Our Services": "خدماتنا", "Services and capabilities presented in the supplied company profile.": "الخدمات والقدرات الواردة في ملف الشركة المقدم.", "Power Substations & Transmission Line Civil Works": "الأعمال المدنية لمحطات الكهرباء وخطوط النقل", "Site Facilities": "منشآت وتجهيزات المواقع", "Electromechanics": "الأعمال الكهروميكانيكية", "Building Construction": "إنشاء المباني", "Civil Engineering Structures & Roads Construction": "المنشآت الهندسية المدنية وإنشاء الطرق", "Construction Project Management": "إدارة مشاريع الإنشاء", "Our Projects": "مشاريعنا", "PROJECT PORTFOLIO": "محفظة المشاريع", "Executed & Ongoing Projects": "المشاريع المنفذة والجارية", "View Complete Project List": "عرض قائمة المشاريع كاملة", "Selected executed projects listed in the profile": "المشاريع المنفذة المدرجة في الملف", "Ongoing projects listed in the profile": "المشاريع الجارية المدرجة في الملف", "Equipment Fleet": "أسطول المعدات", "UPDATED EQUIPMENT DOCUMENT": "ملف المعدات المحدث", "Equipment & Machinery": "المعدات والآليات", "View Complete Equipment List": "عرض قائمة المعدات كاملة", "Equipment categories": "فئات المعدات", "Total listed units": "إجمالي الوحدات المدرجة", " updated equipment PDF": " ملف المعدات المحدث", "Browse Profile Sections": "استعراض أقسام ملف الشركة", "Open Equipment PDF": "فتح ملف المعدات PDF", "COMPANY PROFILE · ABOUT US": "ملف الشركة · من نحن", "Source-derived content from the supplied Company Profile.": "محتوى مستند إلى ملف الشركة المقدم.", "Introduction": "المقدمة", "The unique geographic location of the Kingdom of Saudi Arabia made it an important centre for global trade and investment, helping to attract investors and increasing economic activity in the country in various fields.": "جعل الموقع الجغرافي المميز للمملكة العربية السعودية منها مركزًا مهمًا للتجارة والاستثمار العالمي، مما ساعد على جذب المستثمرين وزيادة النشاط الاقتصادي في مختلف المجالات.", "The contracting sector is one of many countries’ most important economic bases. Saudi Arabia’s construction sector drives the country’s growth, moving economic activity in many industries and associated activities. Also, a report issued by the Council of Saudi Chambers indicates that the construction sector’s recovery ensures the growth of activity in the development sectors and industries. It means that the construction sector is the engine of growth in the national economy.": "يُعد قطاع المقاولات من أهم القواعد الاقتصادية في العديد من الدول. ويسهم قطاع الإنشاءات في المملكة العربية السعودية في دفع نمو البلاد وتحريك النشاط الاقتصادي في العديد من الصناعات والأنشطة المرتبطة بها. كما يشير تقرير صادر عن مجلس الغرف السعودية إلى أن تعافي قطاع الإنشاءات يضمن نمو النشاط في قطاعات وصناعات التنمية. وهذا يعني أن قطاع الإنشاءات هو محرك النمو في الاقتصاد الوطني.", "Nal Al Tsheed is an internationally owned Saudi Arabian company that offers Engineering, Construction, and Construction Project Management.": "نال التشييد شركة سعودية ذات ملكية دولية تقدم خدمات الهندسة والإنشاء وإدارة مشاريع الإنشاء.", "Nal Al Tsheed is dedicated to organisations and individuals seeking construction services.": "تخدم نال التشييد المؤسسات والأفراد الباحثين عن خدمات الإنشاء.", "COMPANY PROFILE · APPROACH": "ملف الشركة · المنهجية", "Expertise & Client Approach": "الخبرة ومنهجية التعامل مع العملاء", "Who We Serve": "من نخدم", "To power distribution and transmission companies, parastatals, oil, water, and pipeline companies, public works agencies, municipalities, and commercial and residential real estate developers.": "شركات توزيع ونقل الطاقة، والمؤسسات والجهات العامة، وشركات النفط والمياه وخطوط الأنابيب، ووكالات الأشغال العامة، والبلديات، ومطوري العقارات التجارية والسكنية.", "Areas of Expertise": "مجالات الخبرة", "Our area of expertise includes, but is not limited to, building technology, Architectural and civil work, and structural engineering.": "تشمل مجالات خبرتنا، على سبيل المثال لا الحصر، تقنيات البناء والأعمال المعمارية والمدنية والهندسة الإنشائية.", "How We Work With Clients": "كيف نعمل مع العملاء", "We work closely with our clients to accurately interpret their dreams/visions in drawings and bring them to the desired reality through construction solutions that meet their needs.": "نعمل بشكل وثيق مع عملائنا لترجمة أحلامهم ورؤاهم بدقة إلى مخططات، وتحويلها إلى واقع مطلوب من خلال حلول إنشائية تلبي احتياجاتهم.", "We communicate with our clients throughout the construction process to inform them of progress and ensure that our project stays on schedule and within budget.": "نتواصل مع عملائنا طوال عملية الإنشاء لإطلاعهم على سير العمل وضمان بقاء المشروع وفق الجدول الزمني وضمن الميزانية.", "OUR PROJECTS": "مشاريعنا", "Selected Executed & Ongoing Projects": "المشاريع المنفذة والجارية", "Executed Projects": "المشاريع المنفذة", "Ongoing Projects": "المشاريع الجارية", "Project Name": "اسم المشروع", "Owner": "المالك", "Location": "الموقع", "Scope of Work": "نطاق العمل", "Construction of the glass domes building at the Northern Border University": "إنشاء مبنى القباب الزجاجية بجامعة الحدود الشمالية", "Construction of the Equestrian Club at the Northern Border University (first stage)": "إنشاء نادي الفروسية بجامعة الحدود الشمالية (المرحلة الأولى)", "Restoration of the Molecular Biology Laboratory at the Northern Border University": "ترميم مختبر الأحياء الجزيئية بجامعة الحدود الشمالية", "Treatment of rooftops of passport administration buildings": "معالجة أسطح مباني إدارة الجوازات", "Civil works at Al-Owaiqila PV380/115KV BSP": "أعمال مدنية بمحطة العويقلة PV380/115KV BSP", "Civil works for Al-Sadawi PV380/115KV BSP": "أعمال مدنية لمحطة السداوي PV380/115KV BSP", "Civil works for Al-Khushaibi PV380/115KV BSP": "أعمال مدنية لمحطة الخشيبي PV380/115KV BSP", "Maintenance work for some civil defense buildings in the Northern region": "أعمال صيانة لبعض مباني الدفاع المدني بالمنطقة الشمالية", "Northern Border University": "جامعة الحدود الشمالية", "Ministry of Interior": "وزارة الداخلية", "Saudi Electricity Co": "الشركة السعودية للكهرباء", "Directorate of Civil Defense": "المديرية العامة للدفاع المدني", "Arar": "عرعر", "Owaiqila": "العويقلة", "Al-Sadawi": "السداوي", "Qassim": "القصيم", "Rafha": "رفحاء", "Hafr albatin": "حفر الباطن", "Civil works": "أعمال مدنية", "المعـــــــدات · UPDATED EQUIPMENT": "المعـــــــدات · المعدات المحدثة", "OFFICIAL COMPANY PROFILE": "ملف الشركة الرسمي", "Profile Sections": "أقسام ملف الشركة", "Interactive access to the principal sections of the supplied Company Profile.": "وصول تفاعلي إلى الأقسام الرئيسية من ملف الشركة المقدم.", "Introduction & About Us": "المقدمة ومن نحن", "Open →": "فتح →", "Close": "إغلاق"};
+ const T={
+   "Nal Al Tsheed Company for Architectural Contracting": "شركة نال التشييد للمقاولات المعمارية", 
+   "NAL AL TSHEED": "نال التشييد", 
+   "About": "من نحن", 
+   "Services": "الخدمات", 
+   "Projects": "المشاريع", 
+   "Equipment": "المعدات", 
+   "Company Profile": "ملف الشركة", 
+   "Contact Us": "اتصل بنا",
+   "Email Address": "البريد الإلكتروني",
+   "Phone Number": "رقم الهاتف",
+   "NAL AL TSHEED COMPANY FOR ARCHITECTURAL CONTRACTING": "شركة نال التشييد للمقاولات المعمارية", 
+   "Nal Al Tsheed": "نال التشييد", 
+   "Company for Architectural Contracting.": "للمقاولات المعمارية.", 
+   "Explore the Company": "استكشف الشركة", 
+   "About Us": "من نحن", 
+   "Who Is Nal Al Tsheed?": "من هي شركة نال التشييد؟", 
+   "Read the company introduction, identity, expertise and approach directly from the supplied Company Profile.": "اطّلع على مقدمة الشركة وهويتها وخبراتها ومنهجية عملها مباشرة من ملف الشركة المقدم.", 
+   "View full information": "عرض المعلومات كاملة", 
+   "Our Approach": "منهجيتنا", 
+   "See the profile's stated clients, areas of expertise and the way Nal Al Tsheed works with clients.": "اطّلع على العملاء ومجالات الخبرة وطريقة عمل نال التشييد مع العملاء كما وردت في ملف الشركة.", 
+   "Open details": "عرض التفاصيل", 
+   "Our Services": "خدماتنا", 
+   "Services and capabilities presented in the supplied company profile.": "الخدمات والقدرات الواردة في ملف الشركة المقدم.", 
+   "Power Substations & Transmission Line Civil Works": "الأعمال المدنية لمحطات الكهرباء وخطوط النقل", 
+   "Site Facilities": "منشآت وتجهيزات المواقع", 
+   "Electromechanics": "الأعمال الكهروميكانيكية", 
+   "Building Construction": "إنشاء المباني", 
+   "Civil Engineering Structures & Roads Construction": "المنشآت الهندسية المدنية وإنشاء الطرق", 
+   "Construction Project Management": "إدارة مشاريع الإنشاء", 
+   "Our Projects": "مشاريعنا", 
+   "PROJECT PORTFOLIO": "محفظة المشاريع", 
+   "Executed & Ongoing Projects": "المشاريع المنفذة والجارية", 
+   "View Complete Project List": "عرض قائمة المشاريع كاملة", 
+   "Selected executed projects listed in the profile": "المشاريع المنفذة المدرجة في الملف", 
+   "Ongoing projects listed in the profile": "المشاريع الجارية المدرجة في الملف", 
+   "Equipment Fleet": "أسطول المعدات", 
+   "UPDATED EQUIPMENT DOCUMENT": "ملف المعدات المحدث", 
+   "Equipment & Machinery": "المعدات والآليات", 
+   "View Complete Equipment List": "عرض قائمة المعدات كاملة", 
+   "Equipment categories": "فئات المعدات", 
+   "Total listed units": "إجمالي الوحدات المدرجة", 
+   " updated equipment PDF": " ملف المعدات المحدث", 
+   "Browse Profile Sections": "استعراض أقسام ملف الشركة", 
+   "Open Equipment PDF": "فتح ملف المعدات PDF", 
+   "Close": "إغلاق"
+ };
  const original=new Map();
  function collect(){
    const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
@@ -228,6 +442,3 @@ html[dir="rtl"] .real-project-next{right:auto;left:20px}
 </script>
 </body>
 </html>
-</script>
-
-</body></html>
