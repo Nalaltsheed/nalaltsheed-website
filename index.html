@@ -13,7 +13,7 @@
     <meta name="language" content="Arabic">
     <link rel="canonical" href="https://nalaltsheed.com/">
 
-    <!-- Open Graph / Facebook / WhatsApp (SEO/Social) -->
+    <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nalaltsheed.com/">
     <meta property="og:title" content="شركة نال التشييد للمقاولات المعمارية | Nal Al Tsheed">
@@ -31,40 +31,67 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "GeneralContractor",
-      "name": "شركة نال التشييد للمقاولات المعمارية",
-      "alternateName": "Nal Al Tsheed Company for Architectural Contracting",
-      "url": "https://nalaltsheed.com",
-      "logo": "https://nalaltsheed.com/logo.jpg",
-      "image": "https://nalaltsheed.com/logo.jpg",
-      "description": "شركة متخصصة في أعمال المقاولات المعمارية والتشييد وإدارة المشاريع الهندسية.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "SA"
-      },
-      "knowsAbout": ["مقاولات معمارية", "تشييد وبناء", "إدارة مشاريع", "تأجير وتشغيل معدات التشييد"]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "ما هي الخدمات التي تقدمها شركة نال التشييد للمقاولات المعمارية؟",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "تقدم الشركة خدمات المقاولات المعمارية المتكاملة، التشييد والبناء، إدارة المشاريع الهندسية، وتوفير وتشغيل أسطول معدات البناء الحديثة."
+      "@graph": [
+        {
+          "@type": "GeneralContractor",
+          "@id": "https://nalaltsheed.com/#organization",
+          "name": "شركة نال التشييد للمقاولات المعمارية",
+          "alternateName": "Nal Al Tsheed Company for Architectural Contracting",
+          "url": "https://nalaltsheed.com",
+          "logo": "https://nalaltsheed.com/logo.jpg",
+          "image": "https://nalaltsheed.com/logo.jpg",
+          "description": "شركة متخصصة في أعمال المقاولات المعمارية والتشييد والحلول الهندسية وإدارة أسطول المعدات الثقيلة.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "SA",
+            "addressRegion": "الشرقية / الرياض"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "description": "المملكة العربية السعودية"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Saudi Arabia"
+          },
+          "knowsAbout": [
+            "مقاولات معمارية",
+            "تشييد وبناء",
+            "إدارة المشاريع الهندسية",
+            "تأجير وتشغيل معدات التشييد"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://nalaltsheed.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "ما هي الخدمات التي تقدمها شركة نال التشييد للمقاولات المعمارية؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "تقدم شركة نال التشييد خدمات المقاولات المعمارية العامة، والتشييد البنائي، والتصاميم والحلول الهندسية المتكاملة، بالإضافة إلى إدارة وتوفير أسطول معدات البناء الحديثة."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "أين تقدم شركة نال التشييد خدماتها؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "تقدم الشركة خدماتها في مختلف مناطق المملكة العربية السعودية للمشاريع المعمارية والإنشائية."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "كيف تضمن الشركة جودة التنفيذ في المشاريع؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "تعتمد الشركة على كوادر هندسية وفنية مؤهلة، واستخدام معدات حديثة مع تطبيق أعلى معايير السلامة والجودة العالمية."
+              }
+            }
+          ]
         }
-      }, {
-        "@type": "Question",
-        "name": "كيف يمكن التواصل مع شركة نال التشييد للاتفاق على مشروع؟",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "يمكنكم التواصل المباشر عبر زر التواصل الموجود في الموقع الإلكتروني الرسمي أو تقديم طلب استشارة هندسية ومراجعة الملف التعريفي للشركة."
-        }
-      }]
+      ]
     }
     </script>
 
@@ -104,7 +131,7 @@
         </div>
     </section>
 
-    <!-- Main Features / Services Section -->
+    <!-- Services Section -->
     <section id="services" class="section light">
         <div class="section-head">
             <span>01</span>
@@ -128,7 +155,7 @@
         </div>
     </section>
 
-    <!-- Interactive Grid / About Section -->
+    <!-- About Section -->
     <section id="about" class="section">
         <div class="section-head">
             <span>02</span>
@@ -150,20 +177,20 @@
         </div>
     </section>
 
-    <!-- AEO Optimization: FAQ Section -->
+    <!-- FAQ Section (AEO Optimization) -->
     <section id="faq" class="section light">
         <div class="section-head">
             <span>03</span>
-            <h2>الأسئلة الشائعة (FAQ)</h2>
+            <h2>الأسئلة الشائعة</h2>
         </div>
         <div class="interactive-grid">
             <div class="info-card">
-                <h3>ما هي مجالات اختصاص شركة نال التشييد؟</h3>
-                <p>تتخصص الشركة في كافة أعمال المقاولات المعمارية، الانشاءات والتشييد، إشراف وإدارة المشاريع، وتوفير أسطول الثقيلة للمشاريع الكبرى.</p>
+                <h3>ما هي الخدمات التي تقدمها شركة نال التشييد؟</h3>
+                <p>تقدم شركة نال التشييد خدمات المقاولات المعمارية العامة، والتشييد البنائي، والحلول الهندسية المتكاملة، إلى جانب إدارة وتأجير معدات التشييد البنائي.</p>
             </div>
             <div class="info-card">
-                <h3>كيف تضمن الشركة جودة ودقة التنفيذ؟</h3>
-                <p>نعتمد على كوادر هندسية وفنية مؤهلة، وأحدث المعدات والآلات المعتمدة، مع تطبيق أنظمة صارمة لإدارة ومراقبة الجودة والسلامة في المواقع.</p>
+                <h3>أين تعمل شركة نال التشييد في السعودية؟</h3>
+                <p>تغطي خدماتنا كافة مناطق المملكة العربية السعودية مع توفير الإشراف الميداني الكامل وأسطول المعدات اللازم للمشاريع.</p>
             </div>
         </div>
     </section>
