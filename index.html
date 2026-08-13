@@ -1,121 +1,160 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شركة نال التشييد للمقاولات المعمارية | Nal Al Tsheed Company</title>
-    <meta name="description" content="شركة نال التشييد للمقاولات المعمارية - رائدة في مجال المقاولات والتشييد والحلول الهندسية المتكاملة.">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شركة نال التشييد للمقاولات المعمارية | Nal Al Tsheed</title>
+  <meta name="description" content="شركة نال التشييد للمقاولات المعمارية - تنفيذ كافة أعمال المقاولات العامة والإنشائية والحلول الهندسية في المملكة العربية السعودية.">
+
+  <!-- Favicon Links -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Schema.org Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "شركة نال التشييد للمقاولات المعمارية",
+    "alternateName": "Nal Al Tsheed",
+    "url": "https://nalaltsheed.com",
+    "email": "info@nalaltsheed.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3834 المهند، حي المحمدية",
+      "addressLocality": "عرعر",
+      "postalCode": "73311",
+      "addressCountry": "SA"
+    }
+  }
+  </script>
 </head>
 <body>
 
-    <header class="nav">
-        <a href="#" class="brand">
-            <img src="logo.jpg" alt="شعار شركة نال التشييد" width="42" height="42">
-            <span data-i18n="brand">Nal Al Tsheed</span>
-        </a>
-        <nav>
-            <a href="#about" data-i18n="aboutNav">عن الشركة</a>
-            <a href="#services" data-i18n="servicesNav">خدماتنا</a>
-            <a href="#faq" data-i18n="faqNav">الأسئلة الشائعة</a>
-            <a href="#contact" data-i18n="contactNav">تواصل معنا</a>
-        </nav>
-        <div class="lang-switch">
-            <button class="lang-btn active" onclick="changeLanguage('ar')">AR</button>
-            <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
-        </div>
-    </header>
+  <!-- Navigation Bar -->
+  <header class="nav">
+    <div class="brand">
+      <img src="logo.png" alt="شعار شركة نال التشييد">
+      <span data-i18n="brand">شركة نال التشييد</span>
+    </div>
+    <nav>
+      <a href="#about" data-i18n="aboutNav">عن الشركة</a>
+      <a href="#services" data-i18n="servicesNav">خدماتنا</a>
+      <a href="#faq" data-i18n="faqNav">الأسئلة الشائعة</a>
+      <a href="#contact" data-i18n="contactNav">تواصل معنا</a>
+    </nav>
+    <div class="lang-switch">
+      <button class="active" onclick="changeLanguage('ar')">AR</button>
+      <button onclick="changeLanguage('en')">EN</button>
+    </div>
+  </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <span class="eyebrow" data-i18n="eyebrow">NAL AL TSHEED COMPANY FOR ARCHITECTURAL CONTRACTING</span>
-            <h1 data-i18n="heroTitle">شركة <span>نال التشييد</span> للمقاولات المعمارية</h1>
-            <p class="hero-copy" data-i18n="heroCopy">رائدون في تقديم الحلول المعمارية والإنشائية المتكاملة وفق أعلى معايير الجودة العالمية والدقة في التنفيذ.</p>
-            <a href="#contact" class="btn" data-i18n="contactBtn">تواصل معنا</a>
-            <a href="#about" class="btn secondary" data-i18n="profileBtn">الملف التعريفي</a>
-        </div>
-        <div class="hero-logo-wrap">
-            <img src="logo.jpg" alt="نال التشييد" class="hero-logo">
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="eyebrow" data-i18n="eyebrow">NAL AL TSHEED COMPANY FOR ARCHITECTURAL CONTRACTING</span>
+      <h1 data-i18n="heroTitle">شركة <span>نال التشييد</span> للمقاولات المعمارية</h1>
+      <p class="hero-copy" data-i18n="heroCopy">رائدون في تقديم الحلول المعمارية والإنشائية المتكاملة وفق أعلى معايير الجودة العالمية والدقة في التنفيذ.</p>
+      <a href="#contact" class="btn" data-i18n="contactBtn">تواصل معنا</a>
+      <button class="btn secondary" data-modal="profileModal" data-i18n="profileBtn">الملف التعريفي</button>
+    </div>
+    <div class="hero-logo-wrap">
+      <img src="logo.png" alt="شعار نال التشييد" class="hero-logo">
+    </div>
+  </section>
 
-    <section id="services" class="section light">
-        <div class="section-head">
-            <span>01</span>
-            <h2 data-i18n="sec1Title">خدماتنا ونطاق العمل</h2>
-        </div>
-        <p class="lead" data-i18n="sec1Lead">نقدم مجموعة شاملة من الخدمات الهندسية والإنشائية لتلبية تطلعات عملائنا في قطاع التشييد والمقاولات.</p>
-        <div class="service-grid">
-            <article><b>01 / CONSTRUCTION</b><h3 data-i18n="s1Title">المقاولات العامة والتشييد</h3></article>
-            <article><b>02 / ARCHITECTURE</b><h3 data-i18n="s2Title">التصاميم والحلول المعمارية</h3></article>
-            <article><b>03 / EQUIPMENT</b><h3 data-i18n="s3Title">إدارة وتوفير المعدات</h3></article>
-        </div>
-    </section>
+  <!-- Services Section -->
+  <section id="services" class="section light">
+    <div class="section-head">
+      <span>01</span>
+      <h2 data-i18n="sec1Title">خدماتنا ونطاق العمل</h2>
+    </div>
+    <p class="lead" data-i18n="sec1Lead">نقدم مجموعة شاملة من الخدمات الهندسية والإنشائية لتلبية تطلعات عملائنا في قطاع التشييد والمقاولات.</p>
+    <div class="service-grid">
+      <article>
+        <b>01</b>
+        <h3 data-i18n="s1Title">المقاولات العامة والتشييد</h3>
+      </article>
+      <article>
+        <b>02</b>
+        <h3 data-i18n="s2Title">التصاميم والحلول المعمارية</h3>
+      </article>
+      <article>
+        <b>03</b>
+        <h3 data-i18n="s3Title">إدارة وتوفير المعدات</h3>
+      </article>
+    </div>
+  </section>
 
-    <section id="about" class="section">
-        <div class="section-head">
-            <span>02</span>
-            <h2 data-i18n="sec2Title">عن نال التشييد</h2>
-        </div>
-        <div class="interactive-grid">
-            <div class="info-card">
-                <span class="card-icon">🏗️</span>
-                <h3 data-i18n="a1Title">رؤيتنا ورسالتنا</h3>
-                <p data-i18n="a1Text">نسعى للارتقاء بقطاع المقاولات المعمارية من خلال اعتماد أحدث التقنيات الهندسية وأسطول معدات متطور لضمان تنفيذ المشاريع بأعلى جودة وفي المواعيد المحددة.</p>
-            </div>
-            <div class="info-card">
-                <span class="card-icon">🏢</span>
-                <h3 data-i18n="a2Title">خبراتنا الميدانية</h3>
-                <p data-i18n="a2Text">تمتلك الشركة سجلاً حافلاً بالنجاحات في تنفيذ وإدارة المشاريع المعمارية المتنوعة برؤية إنشائية مستدامة.</p>
-            </div>
-        </div>
-    </section>
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="section-head">
+      <span>02</span>
+      <h2 data-i18n="sec2Title">عن نال التشييد</h2>
+    </div>
+    <div class="interactive-grid">
+      <div class="info-card">
+        <span class="card-number">01</span>
+        <h3 data-i18n="a1Title">رؤيتنا ورسالتنا</h3>
+        <p data-i18n="a1Text">نسعى للارتقاء بقطاع المقاولات المعمارية من خلال اعتماد أحدث التقنيات الهندسية وأسطول معدات متطور لضمان تنفيذ المشاريع بأعلى جودة وفي المواعيد المحددة.</p>
+      </div>
+      <div class="info-card">
+        <span class="card-number">02</span>
+        <h3 data-i18n="a2Title">خبراتنا الميدانية</h3>
+        <p data-i18n="a2Text">تمتلك الشركة سجلاً حافلاً بالنجاحات في تنفيذ وإدارة المشاريع المعمارية المتنوعة برؤية إنشائية مستدامة.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="faq" class="section light">
-        <div class="section-head">
-            <span>03</span>
-            <h2 data-i18n="sec3Title">الأسئلة الشائعة</h2>
-        </div>
-        <div class="interactive-grid">
-            <div class="info-card">
-                <h3 data-i18n="f1Q">ما هي الخدمات التي تقدمها شركة نال التشييد؟</h3>
-                <p data-i18n="f1A">تقدم شركة نال التشييد خدمات المقاولات المعمارية العامة، والتشييد البنائي، والحلول الهندسية المتكاملة، إلى جانب إدارة وتأجير معدات التشييد البنائي.</p>
-            </div>
-            <div class="info-card">
-                <h3 data-i18n="f2Q">أين تعمل شركة نال التشييد في السعودية؟</h3>
-                <p data-i18n="f2A">تغطي خدماتنا كافة مناطق المملكة العربية السعودية مع توفير الإشراف الميداني الكامل وأسطول المعدات اللازم للمشاريع.</p>
-            </div>
-        </div>
-    </section>
+  <!-- FAQ Section -->
+  <section id="faq" class="section light">
+    <div class="section-head">
+      <span>03</span>
+      <h2 data-i18n="sec3Title">الأسئلة الشائعة</h2>
+    </div>
+    <div class="interactive-grid">
+      <div class="info-card">
+        <h3 data-i18n="f1Q">ما هي الخدمات التي تقدمها شركة نال التشييد؟</h3>
+        <p data-i18n="f1A">تقدم شركة نال التشييد خدمات المقاولات المعمارية العامة، والتشييد البنائي، والحلول الهندسية المتكاملة، إلى جانب إدارة وتأجير معدات التشييد البنائي.</p>
+      </div>
+      <div class="info-card">
+        <h3 data-i18n="f2Q">أين تعمل شركة نال التشييد في السعودية؟</h3>
+        <p data-i18n="f2A">تغطي خدماتنا كافة مناطق المملكة العربية السعودية مع توفير الإشراف الميداني الكامل وأسطول المعدات اللازم للمشاريع.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact" class="section">
-        <div class="section-head">
-            <span>04</span>
-            <h2 data-i18n="sec4Title">تواصل معنا</h2>
-        </div>
-        <p class="lead" data-i18n="sec4Lead">سعداء بتواصلكم ومستعدون لمناقشة كافة تفاصيل مشروعكم القادم.</p>
-        <div class="interactive-grid">
-            <div class="info-card">
-                <span class="card-icon">📍</span>
-                <h3 data-i18n="addrTitle">العنوان والموقع</h3>
-                <p data-i18n="addrText">SHAC3834، 3834 المهند، 8467، حي المحمدية، عرعر 73311، المملكة العربية السعودية</p>
-            </div>
-            <div class="info-card">
-                <span class="card-icon">📞</span>
-                <h3 data-i18n="contactTitle">بيانات الاتصال</h3>
-                <p><strong>الهاتف:</strong> <a href="tel:0553880208">0553880208</a> / <a href="tel:0549100006">0549100006</a></p>
-                <p><strong>البريد الإلكتروني:</strong> <a href="mailto:info@nalaltsheed.com">info@nalaltsheed.com</a></p>
-            </div>
-        </div>
-    </section>
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="section-head">
+      <span>04</span>
+      <h2 data-i18n="sec4Title">تواصل معنا</h2>
+    </div>
+    <p class="lead" data-i18n="sec4Lead">سعداء بتواصلكم ومستعدون لمناقشة كافة تفاصيل مشروعكم القادم.</p>
+    <div class="interactive-grid">
+      <div class="info-card">
+        <h3 data-i18n="addrTitle">العنوان والموقع</h3>
+        <p data-i18n="addrText">SHAC3834، 3834 المهند، 8467، حي المحمدية، عرعر 73311، المملكة العربية السعودية</p>
+      </div>
+      <div class="info-card">
+        <h3 data-i18n="contactTitle">بيانات الاتصال</h3>
+        <p>البريد الإلكتروني: <a href="mailto:info@nalaltsheed.com">info@nalaltsheed.com</a></p>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <div>
-            <img src="logo.jpg" alt="نال التشييد">
-            <p data-i18n="rights">جميع الحقوق محفوظة © شركة نال التشييد للمقاولات المعمارية</p>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <img src="logo.png" alt="شعار نال التشييد">
+    <p data-i18n="rights">جميع الحقوق محفوظة © شركة نال التشييد للمقاولات المعمارية</p>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
