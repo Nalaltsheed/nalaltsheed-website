@@ -218,7 +218,7 @@
     </div>
   </section>
 
-  <!-- Contact Section (مع إضافة نموذج طلب عرض السعر) -->
+  <!-- Contact Section -->
   <section id="contact" class="section">
     <div class="section-head fade-in">
       <span>06</span>
@@ -228,10 +228,19 @@
     
     <div class="contact-wrapper">
       <div class="interactive-grid" style="margin-bottom: 0;">
+        
+        <!-- كارت العنوان مع خريطة جوجل -->
         <div class="info-card fade-in">
           <h3 data-i18n="addrTitle">العنوان والموقع</h3>
           <p data-i18n="addrText">SHAC3834، 3834 المهند، 8467، حي المحمدية، عرعر 73311، المملكة العربية السعودية</p>
+          <!-- Google Maps Iframe -->
+          <div style="margin-top: 15px; border-radius: 8px; overflow: hidden; height: 180px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3417.332306801931!2d41.0182471!3d30.9856578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1538a16555555555%3A0x123456789abcdef!2sArar%20Saudi%20Arabia!5e0!3m2!1sar!2s!4v1700000000000!5m2!1sar!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <!-- ملاحظة: تقدر تستبدل رابط الـ src أعلاه برابط خريطة مقر الشركة الفعلي من Google Maps -->
         </div>
+
+        <!-- كارت بيانات الاتصال -->
         <div class="info-card fade-in">
           <h3 data-i18n="contactTitle">بيانات الاتصال</h3>
           <p style="margin-bottom: 12px;">البريد الإلكتروني: <a href="mailto:info@nalaltsheed.com" class="contact-link">info@nalaltsheed.com</a></p>
@@ -249,9 +258,9 @@
         </div>
       </div>
 
-      <!-- نموذج طلب عرض سعر -->
+      <!-- نموذج طلب عرض سعر التفاعلي -->
       <div class="quote-form-container fade-in">
-        <h3>طلب عرض سعر سريع</h3>
+        <h3 data-i18n="quoteTitle">طلب عرض سعر سريع</h3>
         <form id="quoteForm">
           <div class="form-group">
             <input type="text" id="qName" placeholder="الاسم / اسم الجهة" required>
@@ -309,7 +318,7 @@
     </div>
   </div>
 
-  <!-- WhatsApp Floating Button (Pre-filled Message) -->
+  <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/966552880208?text=مرحباً%20شركة%20نال%20التشيد،%20أود%20الاستفسار%20عن%20خدماتكم..." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="تواصل عبر الواتساب">
     <svg width="32" height="32" viewBox="0 0 24 24" fill="#ffffff">
       <path d="M12.031 0c-6.627 0-12 5.373-12 12 0 2.159.57 4.26 1.657 6.105l-1.688 6.166 6.307-1.654c1.776.97 3.784 1.483 5.724 1.483 6.627 0 12-5.373 12-12s-5.373-12-12-12zm.005 22c-1.812 0-3.583-.483-5.132-1.398l-.368-.218-3.818 1.001 1.019-3.723-.239-.382c-.999-1.592-1.528-3.435-1.528-5.3 0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.441-7.406c-.302-.151-1.782-.88-2.058-.981-.275-.1-.477-.151-.678.151-.202.302-.78 0.981-.956 1.182-.176.201-.353.226-.655.075s-1.276-.47-2.43-1.499c-.898-.801-1.505-1.791-1.681-2.093-.176-.302-.019-.465.132-.615.136-.135.302-.353.453-.529.151-.176.201-.302.302-.503.101-.201.05-.378-.025-.529-.076-.151-.678-1.634-.929-2.238-.244-.588-.493-.678-.518-.176-.009-.377-.009-.578-.009s-.529.075-.805.378c-.276.302-1.056 1.032-1.056 2.516s1.08 2.916 1.232 3.118c.151.201 2.126 3.247 5.15 4.555.719.31 1.281.496 1.719.635.722.23 1.379.197 1.9.12.58-.087 1.782-.729 2.033-1.433.252-.704.252-1.307.176-1.433-.075-.126-.276-.202-.578-.353z"/>
@@ -318,7 +327,7 @@
 
   <!-- Footer -->
   <footer>
-    <img src="logo.webp" alt="شعار نال التشيد">
+    <img src="logo.webp" alt="شعار نال التشيد" loading="lazy">
     <p data-i18n="rights">جميع الحقوق محفوظة © شركة نال التشيد للمقاولات المعمارية</p>
   </footer>
 
