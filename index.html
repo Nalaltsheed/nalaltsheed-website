@@ -1,66 +1,431 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="page-title">شركة نال التشيد للمقاولات المعمارية</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شركة نال التشيد للمقاولات المعمارية | Nal Al Tsheed</title>
+  <meta name="description" content="شركة نال التشيد للمقاولات المعمارية - تنفيذ كافة أعمال المقاولات العامة والإنشائية، المشاريع الحكومية، والحلول الهندسية بالمملكة العربية السعودية.">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="شركة نال التشيد للمقاولات المعمارية">
+  <meta property="og:description" content="رائدون في تقديم الحلول المعمارية والإنشائية، تنفيذ أعمال التوريد والتركيب، المصنعية، والهدم، والمشاريع الحكومية.">
+  <meta property="og:image" content="https://nalaltsheed.com/logo.webp">
+  <meta property="og:url" content="https://nalaltsheed.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon Links -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.webp">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.webp">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.webp">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "شركة نال التشيد للمقاولات المعمارية",
+    "alternateName": "Nal Al Tsheed",
+    "url": "https://nalaltsheed.com",
+    "email": "info@nalaltsheed.com",
+    "telephone": ["+966552880208", "+966549100006"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3834 المهند، حي المحمدية",
+      "addressLocality": "عرعر",
+      "postalCode": "73311",
+      "addressCountry": "SA"
+    }
+  }
+  </script>
 </head>
 <body>
 
-    <header>
-        <div class="logo" data-i18n="company-name">شركة نال التشيد</div>
-        <nav>
-            <ul>
-                <li><a href="#home" data-i18n="nav-home">الرئيسية</a></li>
-                <li><a href="#about" data-i18n="nav-about">من نحن</a></li>
-                <li><a href="#services" data-i18n="nav-services">خدماتنا</a></li>
-                <li><a href="#projects" data-i18n="nav-projects">مشاريعنا</a></li>
-                <li><a href="#contact" data-i18n="nav-contact">اتصل بنا</a></li>
-            </ul>
-        </nav>
-        <button id="lang-switch-btn" data-i18n="btn-lang">English</button>
-    </header>
+  <!-- Navigation Bar (Sticky Navbar) -->
+  <header class="nav" id="main-nav">
+    <div class="brand">
+      <img src="logo.webp" alt="شعار شركة نال التشيد">
+      <span data-i18n="brand">شركة نال التشيد</span>
+    </div>
+    <nav>
+      <a href="#about" data-i18n="aboutNav">عن الشركة</a>
+      <a href="#services" data-i18n="servicesNav">خدماتنا</a>
+      <a href="#gov-projects" data-i18n="govProjectsNav">سابقة الأعمال الحكومية</a>
+      <a href="#projects" data-i18n="projectsNav">مشاريعنا</a>
+      <a href="#equipment" data-i18n="equipmentNav">المعدات</a>
+      <a href="#estimator" data-i18n="estimatorNav">حاسبة التسعير</a>
+      <a href="#contact" data-i18n="contactNav">تواصل معنا</a>
+    </nav>
+    <div class="lang-switch">
+      <button id="btn-ar" class="active" onclick="changeLanguage('ar')">AR</button>
+      <button id="btn-en" onclick="changeLanguage('en')">EN</button>
+    </div>
+  </header>
 
-    <section id="home">
-        <h1 data-i18n="hero-title">مرحباً بكم في شركة نال التشيد للمقاولات المعمارية</h1>
-        <p data-i18n="hero-subtitle">نبني المستقبل بجودة واحترافية</p>
-        <a href="#" class="btn" data-i18n="btn-download">تحميل الملف التعريفي</a>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero fade-in">
+    <div class="hero-content">
+      <span class="eyebrow" data-i18n="eyebrow">NAL AL TSHEED COMPANY FOR ARCHITECTURAL CONTRACTING</span>
+      <h1 data-i18n="heroTitle">شركة <span>نال التشيد</span> للمقاولات المعمارية</h1>
+      <p class="hero-copy" data-i18n="heroCopy">رائدون في تقديم الحلول المعمارية والإنشائية المتكاملة وإدارة المشاريع الحكومية والبنية التحتية وفق أعلى معايير الجودة.</p>
+      <a href="#estimator" class="btn" data-i18n="heroEstimatorBtn">احسب تكلفة مشروعك</a>
+      <button class="btn secondary" data-modal="profileModal" data-i18n="profileBtn">الملف التعريفي</button>
+    </div>
+    <div class="hero-logo-wrap">
+      <img src="logo.webp" alt="شعار نال التشيد" class="hero-logo">
+    </div>
+  </section>
 
-    <section id="services">
-        <h2 data-i18n="nav-services">خدماتنا</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3 data-i18n="service-1-title">المقاولات العامة</h3>
-                <p data-i18n="service-1-desc">تنفيذ جميع الأعمال الإنشائية بأعلى المعايير.</p>
-            </div>
-            <div class="service-card">
-                <h3 data-i18n="service-2-title">التصاميم الهندسية</h3>
-                <p data-i18n="service-2-desc">حلول هندسية متكاملة ومبتكرة.</p>
-            </div>
-            <div class="service-card">
-                <h3 data-i18n="service-3-title">المعدات الثقيلة</h3>
-                <p data-i18n="service-3-desc">إدارة وتوفير أسطول معدات متكامل.</p>
-            </div>
+  <!-- Services Section -->
+  <section id="services" class="section light">
+    <div class="section-head fade-in">
+      <span>01</span>
+      <h2 data-i18n="sec1Title">خدماتنا ونطاق العمل</h2>
+    </div>
+    <p class="lead fade-in" data-i18n="sec1Lead">نقدم مجموعة شاملة من الخدمات الهندسية والإنشائية لتلبية تطلعات عملائنا في قطاع التشييد والمقاولات.</p>
+    <div class="service-grid">
+      <article class="fade-in">
+        <b>01</b>
+        <h3 data-i18n="s1Title">المقاولات العامة والتشييد</h3>
+      </article>
+      <article class="fade-in">
+        <b>02</b>
+        <h3 data-i18n="s2Title">التصاميم والحلول المعمارية</h3>
+      </article>
+      <article class="fade-in">
+        <b>03</b>
+        <h3 data-i18n="s3Title">إدارة وتوفير المعدات</h3>
+      </article>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="section-head fade-in">
+      <span>02</span>
+      <h2 data-i18n="sec2Title">عن نال التشيد</h2>
+    </div>
+    <div class="interactive-grid">
+      <div class="info-card fade-in">
+        <span class="card-number">01</span>
+        <h3 data-i18n="a1Title">رؤيتنا ورسالتنا</h3>
+        <p data-i18n="a1Text">نسعى للارتقاء بقطاع المقاولات المعمارية من خلال اعتماد أحدث التقنيات الهندسية وأسطول معدات متطور لضمان تنفيذ المشاريع بأعلى جودة وفي المواعيد المحددة.</p>
+      </div>
+      <div class="info-card fade-in">
+        <span class="card-number">02</span>
+        <h3 data-i18n="a2Title">خبراتنا الميدانية</h3>
+        <p data-i18n="a2Text">تمتلك الشركة سجلاً حافلاً بالنجاحات في تنفيذ وإدارة المشاريع المعمارية والمشاريع الحكومية برؤية إنشائية مستدامة.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Government & Infrastructure Projects Section -->
+  <section id="gov-projects" class="section light">
+    <div class="section-head fade-in">
+      <span>03</span>
+      <h2 data-i18n="govTitle">سابقة الأعمال والمشاريع الحكومية</h2>
+    </div>
+    <p class="lead fade-in" data-i18n="govLead">نفخر بالشراكة في تنفيذ مشاريع إستراتيجية وبنية تحتية مع الجهات الحكومية والشركات الكبرى بالمملكة.</p>
+    
+    <div class="gov-grid">
+      <div class="gov-card fade-in">
+        <div class="gov-badge" data-i18n="gov1Badge">قطاع التعليم</div>
+        <h3 data-i18n="gov1Title">صيانة وإصلاح المرافق التعليمية</h3>
+        <p data-i18n="gov1Desc">تنفيذ أعمال الصيانة العاجلة والترميمات الشاملة الميدانية للمجمع التعليمي والمدارس بمنطقة الجوف، مع الالتزام التام بالمعايير الهندسية والأوقات القياسية.</p>
+        <ul class="gov-specs">
+          <li><strong data-i18n="gov1Lbl1">الجهة:</strong> <span data-i18n="gov1Val1">قطاع التعليم والتربية</span></li>
+          <li><strong data-i18n="gov1Lbl2">النطاق:</strong> <span data-i18n="gov1Val2">صيانة عاجلة وترميمات معمارية</span></li>
+          <li><strong data-i18n="gov1Lbl3">الموقع:</strong> <span data-i18n="gov1Val3">منطقة الجوف</span></li>
+        </ul>
+      </div>
+
+      <div class="gov-card fade-in">
+        <div class="gov-badge" data-i18n="gov2Badge">البنية التحتية والكهرباء</div>
+        <h3 data-i18n="gov2Title">الأعمال المدنية لمشاريع محطات التحويل (380kV)</h3>
+        <p data-i18n="gov2Desc">تنفيذ الأعمال المدنية وتجهيز طبقات التأسيس (Subbase) والتسويات الترابية والخرسانية لمشروع محطة التحويل الرئيسية (Sadawi BSP 380kV).</p>
+        <ul class="gov-specs">
+          <li><strong data-i18n="gov2Lbl1">القطاع:</strong> <span data-i18n="gov2Val1">الطاقة والبنية التحتية</span></li>
+          <li><strong data-i18n="gov2Lbl2">النطاق:</strong> <span data-i18n="gov2Val2">أعمال مدنية وتسويات وحفريات</span></li>
+          <li><strong data-i18n="gov2Lbl3">الموقع:</strong> <span data-i18n="gov2Val3">مشروع السعداوي</span></li>
+        </ul>
+      </div>
+
+      <div class="gov-card fade-in">
+        <div class="gov-badge" data-i18n="gov3Badge">المباني الحكومية والأمنية</div>
+        <h3 data-i18n="gov3Title">ترميم وتأهيل مباني الدفاع المدني</h3>
+        <p data-i18n="gov3Desc">إدارة وتنفيذ أعمال الترميم الشاملة، معالجة التشققات الإنشائية، والتشطيبات الفنية لمباني الدفاع المدني لضمان الجاهزية التشغيلية القصوى.</p>
+        <ul class="gov-specs">
+          <li><strong data-i18n="gov3Lbl1">القطاع:</strong> <span data-i18n="gov3Val1">المباني الحكومية</span></li>
+          <li><strong data-i18n="gov3Lbl2">النطاق:</strong> <span data-i18n="gov3Val2">ترميم وإصلاحات إنشائية</span></li>
+          <li><strong data-i18n="gov3Lbl3">الموقع:</strong> <span data-i18n="gov3Val3">مدينة رفحاء</span></li>
+        </ul>
+      </div>
+
+      <div class="gov-card fade-in">
+        <div class="gov-badge" data-i18n="gov4Badge">الإنشاءات المتخصصة</div>
+        <h3 data-i18n="gov4Title">إنشاء الوحدات الإنشائية والمباني العاجلة</h3>
+        <p data-i18n="gov4Desc">تنفيذ وتجهيز الوحدات الإنشائية العاجلة وفق أحدث المواصفات الهندسية الخاصة بالأمان والجودة العالية للمشاريع الإستراتيجية.</p>
+        <ul class="gov-specs">
+          <li><strong data-i18n="gov4Lbl1">القطاع:</strong> <span data-i18n="gov4Val1">مقاولات إنشائية متخصصة</span></li>
+          <li><strong data-i18n="gov4Lbl2">النطاق:</strong> <span data-i18n="gov4Val2">بناء وتجهيز متكامل</span></li>
+          <li><strong data-i18n="gov4Lbl3">الموقع:</strong> <span data-i18n="gov4Val3">الحدود الشمالية - رفحاء</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Gallery Section -->
+  <section id="projects" class="section">
+    <div class="section-head fade-in">
+      <span>04</span>
+      <h2 data-i18n="secProjectsTitle">معرض الصور والأعمال</h2>
+    </div>
+    <p class="lead fade-in" data-i18n="secProjectsLead">جانب من الأعمال الميدانية والتنفيذية التي تم إنجازها بواسطة فريق شركة نال التشيد.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item lightbox-trigger fade-in" data-title="أعمال الانشاءات والتشييد">
+        <img src="project-work-1-1.webp" alt="أعمال الانشاءات والتشييد" loading="lazy">
+        <div class="gallery-caption" data-i18n="p1Cap">أعمال الانشاءات والتشييد</div>
+      </div>
+      <div class="gallery-item lightbox-trigger fade-in" data-title="مشاريع الهياكل الإنشائية">
+        <img src="project-work-2-1.webp" alt="مشاريع الهياكل الإنشائية" loading="lazy">
+        <div class="gallery-caption" data-i18n="p2Cap">مشاريع الهياكل الإنشائية</div>
+      </div>
+      <div class="gallery-item lightbox-trigger fade-in" data-title="أعمال التجهيزات المعمارية">
+        <img src="project-work-3-1.webp" alt="أعمال التجهيزات المعمارية" loading="lazy">
+        <div class="gallery-caption" data-i18n="p3Cap">أعمال التجهيزات المعمارية</div>
+      </div>
+      <div class="gallery-item lightbox-trigger fade-in" data-title="التطوير الميداني والتنفيذ">
+        <img src="project-work-4-1.webp" alt="التطوير الميداني والتنفيذ" loading="lazy">
+        <div class="gallery-caption" data-i18n="p4Cap">التطوير الميداني والتنفيذ</div>
+      </div>
+      <div class="gallery-item lightbox-trigger fade-in" data-title="أعمال الصب والخرسانة">
+        <img src="project-work-5-1.webp" alt="أعمال الصب والخرسانة" loading="lazy">
+        <div class="gallery-caption" data-i18n="p5Cap">أعمال الصب والخرسانة</div>
+      </div>
+      <div class="gallery-item lightbox-trigger fade-in" data-title="إدارة المواقع والتشطيبات">
+        <img src="project-work-6-1.webp" alt="إدارة المواقع والتشطيبات" loading="lazy">
+        <div class="gallery-caption" data-i18n="p6Cap">إدارة المواقع والتشطيبات</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipment Fleet Section -->
+  <section id="equipment" class="section light">
+    <div class="section-head fade-in">
+      <span>05</span>
+      <h2 data-i18n="secEquipTitle">أسطول المعدات</h2>
+    </div>
+    <p class="lead fade-in" data-i18n="secEquipLead">تتجهز الشركة بأسطول متكامل من الآليات والمعدات الثقيلة لتنفيذ أضخم المشاريع الإنشائية بكفاءة عالية.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item lightbox-trigger fade-in" data-title="حافلة نقل عمالة (سعة كبيرة)">
+        <img src="01_Large_Bus.webp" alt="حافلة نقل عمالة" loading="lazy">
+        <div class="gallery-caption" data-i18n="e1Cap">حافلة نقل عمالة (سعة كبيرة)</div>
+      </div>
+      <div class="gallery-item lightbox-trigger fade-in" data-title="شاحنة نقل متوسطة (دينا إيسوزو)">
+        <img src="02_Dina_Isuzu.webp" alt="شاحنة نقل متوسطة" loading="lazy">
+        <div class="gallery-caption" data-i18n="e2Cap">شاحنة نقل متوسطة (دينا إيسوزو)</div>
+      </div>
+      <div class="gallery-item lightbox-trigger fade-in" data-title="سيارات الإشراف والتنقل الميداني">
+        <img src="03_Cars.webp" alt="سيارات الإشراف" loading="lazy">
+        <div class="gallery-caption" data-i18n="e3Cap">سيارات الإشراف والتنقل الميداني</div>
+      </div>
+      <div class="gallery-item lightbox-trigger fade-in" data-title="رافعة شوكية Forklift 3 Ton">
+        <img src="04_Forklift_3_ton.webp" alt="رافعة شوكية" loading="lazy">
+        <div class="gallery-caption" data-i18n="e4Cap">رافعة شوكية <bdi>(Forklift 3 Ton)</bdi></div>
+      </div>
+      <div class="gallery-item lightbox-trigger fade-in" data-title="رافعة هيدروليكية Crane 50 Ton">
+        <img src="05_Crane_50_ton.webp" alt="رافعة هيدروليكية" loading="lazy">
+        <div class="gallery-caption" data-i18n="e5Cap">رافعة هيدروليكية <bdi>(Crane 50 Ton)</bdi></div>
+      </div>
+      <div class="gallery-item lightbox-trigger fade-in" data-title="برج إضاءة متحرك Tower Light">
+        <img src="06_Tower_Light.webp" alt="برج إضاءة متحرك" loading="lazy">
+        <div class="gallery-caption" data-i18n="e6Cap">برج إضاءة متحرك <bdi>(Tower Light)</bdi></div>
+      </div>
+      <div class="gallery-item lightbox-trigger fade-in" data-title="مولد كهرباء Generator 720 KW">
+        <img src="07_Generator_720_KW.webp" alt="مولد كهرباء" loading="lazy">
+        <div class="gallery-caption" data-i18n="e7Cap">مولد كهرباء <bdi>(Generator 720 KW)</bdi></div>
+      </div>
+      <div class="gallery-item lightbox-trigger fade-in" data-title="ماكينة لحام موقعية متطورة">
+        <img src="08_Welding_Machine.webp" alt="ماكينة لحام موقعية" loading="lazy">
+        <div class="gallery-caption" data-i18n="e8Cap">ماكينة لحام موقعية متطورة</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Cost Estimator & BOQ Section -->
+  <section id="estimator" class="section">
+    <div class="section-head fade-in">
+      <span>06</span>
+      <h2 data-i18n="estTitle">حاسبة دراسة التكلفة وجداول الكميات (BOQ)</h2>
+    </div>
+    <p class="lead fade-in" data-i18n="estLead">حدد تفاصيل عملك بدقة ليصلك عرض سعر ودراسة كميات منظمة ومباشرة من مهندسي شركة نال التشيد.</p>
+
+    <div class="estimator-card fade-in">
+      <form id="estimatorForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="estService" data-i18n="estLblService">نوع الخدمة المطلوبة *</label>
+            <select id="estService" required>
+              <option value="" disabled selected data-i18n="estOptSelect">اختر الخدمة...</option>
+              <option value="أعمال توريد وتركيب (مواد + مصنعية)" data-i18n="estOpt1">أعمال توريد وتركيب (مواد + مصنعية)</option>
+              <option value="أعمال مصنعية فقط" data-i18n="estOpt2">أعمال مصنعية فقط</option>
+              <option value="أعمال هدم وإزالة وإخلاء" data-i18n="estOpt3">أعمال هدم وإزالة وإخلاء</option>
+              <option value="تسعير جدول كميات ومقايسة (BOQ)" data-i18n="estOpt4">تسعير جدول كميات ومقايسة (BOQ)</option>
+              <option value="استئجار معدات وآليات" data-i18n="estOpt5">استئجار معدات وآليات</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="estCategory" data-i18n="estLblCategory">تصنيف المشروع *</label>
+            <select id="estCategory" required>
+              <option value="مبنى سكني / تجاري" data-i18n="estCat1">مبنى سكني / تجاري</option>
+              <option value="مرفق حكومي / تعليمي" data-i18n="estCat2">مرفق حكومي / تعليمي</option>
+              <option value="مشروع بنية تحتية / كهرباء" data-i18n="estCat3">مشروع بنية تحتية / كهرباء</option>
+              <option value="أعمال هدم دور / مبنى" data-i18n="estCat4">أعمال هدم دور / مبنى</option>
+            </select>
+          </div>
         </div>
-    </section>
 
-    <section id="contact">
-        <h2 data-i18n="nav-contact">اتصل بنا</h2>
-        <form id="quote-form">
-            <input type="text" placeholder="الاسم" data-i18n-placeholder="quote-name">
-            <input type="email" placeholder="البريد الإلكتروني" data-i18n-placeholder="quote-email">
-            <textarea placeholder="تفاصيل الطلب" data-i18n-placeholder="quote-details"></textarea>
-            <button type="submit" data-i18n="btn-submit">إرسال الطلب</button>
-        </form>
-    </section>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="estQuantity" data-i18n="estLblQty">المساحة التقريبية (م²) أو عدد الوحدات</label>
+            <input type="text" id="estQuantity" placeholder="مثال: 500 م² أو 49 حبة/وحدة" data-i18n-placeholder="estPlcQty">
+          </div>
+          <div class="form-group">
+            <label for="estCity" data-i18n="estLblCity">موقع المشروع / المدينة *</label>
+            <input type="text" id="estCity" placeholder="مثال: عرعر، رفحاء، الجوف..." data-i18n-placeholder="estPlcCity" required>
+          </div>
+        </div>
 
-    <!-- زر واتساب -->
-    <a href="#" id="whatsapp-btn" class="whatsapp-float">
-        <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp">
-    </a>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="clientName" data-i18n="estLblName">اسم الجهة / العميل *</label>
+            <input type="text" id="clientName" placeholder="أدخل اسمك أو اسم الشركة" data-i18n-placeholder="estPlcName" required>
+          </div>
+          <div class="form-group">
+            <label for="clientPhone" data-i18n="estLblPhone">رقم الجوال والتواصل *</label>
+            <input type="tel" id="clientPhone" placeholder="05XXXXXXXX" data-i18n-placeholder="estPlcPhone" required>
+          </div>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="form-group">
+          <label for="estNotes" data-i18n="estLblNotes">تفاصيل إضافية أو بنود جدول الكميات</label>
+          <textarea id="estNotes" rows="4" placeholder="اكتب مواصفات المواد، عدد الأدوار، أو أي تفاصيل هندسية تود إضافتها..." data-i18n-placeholder="estPlcNotes"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-full" data-i18n="estBtnSubmit">إنشاء طلب التسعير المباشر عبر الواتساب 📋💬</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="section light">
+    <div class="section-head fade-in">
+      <span>07</span>
+      <h2 data-i18n="sec3Title">الأسئلة الشائعة</h2>
+    </div>
+    <div class="interactive-grid">
+      <div class="info-card fade-in">
+        <h3 data-i18n="f1Q">ما هي الخدمات التي تقدمها شركة نال التشيد؟</h3>
+        <p data-i18n="f1A">تقدم شركة نال التشيد خدمات المقاولات المعمارية العامة، والتشييد البنائي، تنفيذ المشاريع الحكومية، والحلول الهندسية المتكاملة، إلى جانب إدارة وتأجير معدات التشييد البنائي.</p>
+      </div>
+      <div class="info-card fade-in">
+        <h3 data-i18n="f2Q">أين تعمل شركة نال التشيد في السعودية؟</h3>
+        <p data-i18n="f2A">تغطي خدماتنا كافة مناطق المملكة العربية السعودية وخاصة المنطقة الشمالية (عرعر، رفحاء، الجوف) مع توفير الإشراف الميداني الكامل وأسطول المعدات اللازم.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="section-head fade-in">
+      <span>08</span>
+      <h2 data-i18n="sec4Title">تواصل معنا</h2>
+    </div>
+    <p class="lead fade-in" data-i18n="sec4Lead">سعداء بتواصلكم ومستعدون لمناقشة كافة تفاصيل مشروعكم القادم.</p>
+    
+    <div class="contact-wrapper">
+      <div class="interactive-grid" style="margin-bottom: 0;">
+        
+        <!-- كارت العنوان مع خريطة جوجل -->
+        <div class="info-card fade-in">
+          <h3 data-i18n="addrTitle">العنوان والموقع</h3>
+          <p data-i18n="addrText">SHAC3834، 3834 المهند، 8467، حي المحمدية، عرعر 73311، المملكة العربية السعودية</p>
+          <div style="margin-top: 15px; border-radius: 8px; overflow: hidden; height: 180px;">
+            <iframe src="https://maps.google.com/maps?q=3834%20المهند،%20حي%20المحمدية،%20عرعر%2073311&hl=ar&z=16&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+        <!-- كارت بيانات الاتصال -->
+        <div class="info-card fade-in">
+          <h3 data-i18n="contactTitle">بيانات الاتصال</h3>
+          <p style="margin-bottom: 12px;"><span data-i18n="emailLbl">البريد الإلكتروني:</span> <a href="mailto:info@nalaltsheed.com" class="contact-link">info@nalaltsheed.com</a></p>
+          <p><strong data-i18n="phoneHeader">أرقام الاتصال والمبيعات:</strong></p>
+          <ul class="phone-list">
+            <li class="phone-item">
+              <span>📞</span>
+              <a href="tel:0552880208" class="contact-link">0552880208</a>
+            </li>
+            <li class="phone-item">
+              <span>📞</span>
+              <a href="tel:0549100006" class="contact-link">0549100006</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profile Modal -->
+  <div id="profileModal" class="modal" aria-hidden="true">
+    <div class="modal-overlay" data-close="profileModal"></div>
+    <div class="modal-content">
+      <h3 style="color: var(--navy); margin-top: 0; font-size: 24px;" data-i18n="modalTitle">الملف التعريفي لشركة نال التشيد</h3>
+      <p style="color: var(--muted); margin-bottom: 20px;" data-i18n="modalDesc">يمكنك استعراض أو تحميل الكتالوج الشامل لأسطول المعدات والمشاريع الخاص بالشركة بصيغة PDF.</p>
+
+      <div style="margin-bottom: 25px;">
+        <a href="profile.pdf" target="_blank" class="btn" download="NAL_AL_TSHEED_PROFILE.pdf" style="display: inline-flex; align-items: center; gap: 8px;">
+          <span>📄</span> <span data-i18n="modalDownload">تحميل الملف التعريفي (PDF)</span>
+        </a>
+      </div>
+
+      <h4 style="color: var(--navy); margin-bottom: 10px;" data-i18n="modalPreview">معاينة بعض صفحات البروفايل:</h4>
+      <div class="modal-gallery">
+        <img src="page-1.webp" alt="صفحة البروفايل 1" class="lightbox-trigger" data-title="بروفايل - صفحة 1" loading="lazy">
+        <img src="page-4.webp" alt="صفحة البروفايل 4" class="lightbox-trigger" data-title="بروفايل - صفحة 4" loading="lazy">
+        <img src="page-5.webp" alt="صفحة البروفايل 5" class="lightbox-trigger" data-title="بروفايل - صفحة 5" loading="lazy">
+        <img src="page-7.webp" alt="صفحة البروفايل 7" class="lightbox-trigger" data-title="بروفايل - صفحة 7" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" class="modal" aria-hidden="true">
+    <div class="modal-overlay" data-close="lightboxModal"></div>
+    <div class="lightbox-box">
+      <button class="modal-close lightbox-close" data-close="lightboxModal" aria-label="إغلاق">&times;</button>
+      <img id="lightboxImg" src="" alt="صورة مكبرة">
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- Dynamic WhatsApp Floating Button -->
+  <a id="dynamic-wa-btn" href="https://wa.me/966552880208?text=مرحباً%20شركة%20نال%20التشيد،%20أود%20الاستفسار%20عن%20خدماتكم..." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="تواصل عبر الواتساب">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="#ffffff">
+      <path d="M12.031 0c-6.627 0-12 5.373-12 12 0 2.159.57 4.26 1.657 6.105l-1.688 6.166 6.307-1.654c1.776.97 3.784 1.483 5.724 1.483 6.627 0 12-5.373 12-12s-5.373-12-12-12zm.005 22c-1.812 0-3.583-.483-5.132-1.398l-.368-.218-3.818 1.001 1.019-3.723-.239-.382c-.999-1.592-1.528-3.435-1.528-5.3 0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.441-7.406c-.302-.151-1.782-.88-2.058-.981-.275-.1-.477-.151-.678.151-.202.302-.78 0.981-.956 1.182-.176.201-.353.226-.655.075s-1.276-.47-2.43-1.499c-.898-.801-1.505-1.791-1.681-2.093-.176-.302-.019-.465.132-.615.136-.135.302-.353.453-.529.151-.176.201-.302.302-.503.101-.201.05-.378-.025-.529-.076-.151-.678-1.634-.929-2.238-.244-.588-.493-.678-.518-.176-.009-.377-.009-.578-.009s-.529.075-.805.378c-.276.302-1.056 1.032-1.056 2.516s1.08 2.916 1.232 3.118c.151.201 2.126 3.247 5.15 4.555.719.31 1.281.496 1.719.635.722.23 1.379.197 1.9.12.58-.087 1.782-.729 2.033-1.433.252-.704.252-1.307.176-1.433-.075-.126-.276-.202-.578-.353z"/>
+    </svg>
+    <span id="wa-tooltip" class="wa-tooltip">تواصل مع الهندسة والمبيعات</span>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <img src="logo.webp" alt="شعار نال التشيد" loading="lazy">
+    <p data-i18n="rights">جميع الحقوق محفوظة © شركة نال التشيد للمقاولات المعمارية</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
