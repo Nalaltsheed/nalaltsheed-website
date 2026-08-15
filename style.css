@@ -36,6 +36,13 @@ a { text-decoration: none; color: inherit; }
     background: rgba(255,255,255,.96);
     border-bottom: 1px solid #e6edf3;
     backdrop-filter: blur(10px);
+    transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
+}
+
+.nav.scrolled {
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    height: 72px;
 }
 
 .brand {
@@ -52,6 +59,11 @@ a { text-decoration: none; color: inherit; }
     height: 42px;
     object-fit: cover;
     border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.brand img:hover {
+    transform: scale(1.05);
 }
 
 .nav nav {
@@ -60,6 +72,10 @@ a { text-decoration: none; color: inherit; }
     font-size: 14px;
     font-weight: 600;
     color: #40566e;
+}
+
+.nav nav a {
+    transition: color 0.25s ease;
 }
 
 .nav nav a:hover { color: var(--blue); }
@@ -93,12 +109,23 @@ a { text-decoration: none; color: inherit; }
     flex-shrink: 0;
 }
 
+/* حركة طفو اللوجو الرئيسي بشكل انسيابي */
+@keyframes floatLogo {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
 .hero-logo {
     width: 100%;
     height: auto;
     display: block;
     object-fit: contain;
     filter: drop-shadow(0 18px 30px rgba(33,74,120,.10));
+    animation: floatLogo 5s ease-in-out infinite;
 }
 
 .eyebrow {
@@ -136,12 +163,13 @@ a { text-decoration: none; color: inherit; }
     border-radius: 4px;
     font-weight: 700;
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.1s ease;
+    transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
 }
 
 .btn:hover {
     background: var(--blue);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(25, 169, 220, 0.3);
 }
 
 html[dir="rtl"] .btn.secondary {
@@ -158,6 +186,11 @@ html[dir="ltr"] .btn.secondary {
     background: white;
     color: var(--navy);
     border: 1px solid var(--navy);
+}
+
+.btn.secondary:hover {
+    background: var(--navy);
+    color: white;
 }
 
 /* Sections */
@@ -199,6 +232,13 @@ html[dir="ltr"] .btn.secondary {
     padding: 32px;
     border-radius: 6px;
     box-shadow: 0 8px 28px rgba(24,71,105,.04);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(24,71,105,.1);
+    border-color: var(--blue);
 }
 
 html[dir="rtl"] .card-number { left: 28px; right: auto; }
@@ -229,10 +269,29 @@ html[dir="ltr"] .card-number { right: 28px; left: auto; }
     border: 1px solid #e1eaf1;
     padding: 28px;
     border-radius: 6px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.service-grid article:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(24,71,105,.1);
+    border-color: var(--blue);
 }
 
 .service-grid b { color: var(--blue); font-size: 13px; }
 .service-grid h3 { font-size: 20px; color: var(--navy); margin-top: 10px; }
+
+/* Scroll Reveal Animation Rules */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 /* Language Switch */
 .lang-switch { display: flex; gap: 6px; }
@@ -245,11 +304,16 @@ html[dir="ltr"] .card-number { right: 28px; left: auto; }
     cursor: pointer;
     font-weight: 700;
     font-size: 12px;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .lang-switch button.active {
     background: var(--navy);
     color: #fff;
+}
+
+.lang-switch button:hover:not(.active) {
+    border-color: var(--navy);
 }
 
 /* Footer */
