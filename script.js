@@ -200,3 +200,55 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+/* =========================================
+   تشغيل تأثيرات الحركة عند التمرير (Scroll Animations)
+========================================= */
+document.addEventListener("DOMContentLoaded", function() {
+  const fadeElements = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        return;
+      } else {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); // إيقاف المراقبة بعد ظهور العنصر
+      }
+    });
+  }, appearOptions);
+
+  fadeElements.forEach(el => {
+    appearOnScroll.observe(el);
+  });
+});
+
+/* =========================================
+   برمجة نموذج طلب عرض السعر ليرسل لواتساب
+========================================= */
+const quoteForm = document.getElementById('quoteForm');
+if(quoteForm) {
+  quoteForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // منع إعادة تحميل الصفحة
+    
+    // سحب البيانات من الحقول
+    const name = document.getElementById('qName').value;
+    const phone = document.getElementById('qPhone').value;
+    const service = document.getElementById('qService').value;
+    const details = document.getElementById('qDetails').value;
+    
+    // تجهيز الرسالة
+    const whatsappMessage = `مرحباً شركة نال التشيد،%0Aأرغب في طلب عرض سعر:%0A%0A👤 *الاسم / الجهة:* ${name}%0A📱 *الجوال:* ${phone}%0A🏗️ *نوع الأعمال:* ${service}%0A📝 *التفاصيل:* ${details}`;
+    
+    // رقم الواتساب الخاص بالشركة
+    const whatsappNumber = "966552880208"; 
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+    
+    // فتح نافذة الواتساب
+    window.open(whatsappUrl, '_blank');
+  });
+}

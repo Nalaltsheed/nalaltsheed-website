@@ -474,3 +474,92 @@ footer img {
     font-size: 2rem;
   }
 }
+/* =========================================
+   تحديثات القائمة الثابتة (Sticky Navbar)
+========================================= */
+header.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* =========================================
+   تأثيرات الحركة والدخول (Fade-in Animations)
+========================================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   تنسيقات نموذج طلب عرض السعر (Quote Form)
+========================================= */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 40px;
+}
+@media (min-width: 992px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.quote-form-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid var(--navy, #1e3a8a);
+}
+.quote-form-container h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--navy, #1e3a8a);
+  font-size: 22px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  .form-group {
+    flex-direction: row;
+  }
+}
+.quote-form-container input,
+.quote-form-container select,
+.quote-form-container textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+  background-color: #f9fafb;
+  transition: border-color 0.3s;
+}
+.quote-form-container input:focus,
+.quote-form-container select:focus,
+.quote-form-container textarea:focus {
+  outline: none;
+  border-color: var(--navy, #1e3a8a);
+  background-color: #fff;
+}
+.btn-full {
+  width: 100%;
+  justify-content: center;
+  font-size: 16px;
+  padding: 14px;
+}
