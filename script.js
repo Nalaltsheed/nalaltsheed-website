@@ -127,4 +127,31 @@
       }
     });
   };
+
+  // --- 3. Scroll Reveal & Navbar Animations ---
+  document.addEventListener('DOMContentLoaded', () => {
+    // إضافة كلاس الظهور الانسيابي للأقسام والكروت
+    const revealElements = document.querySelectorAll('.section, .info-card, .service-grid article, .hero-content');
+    revealElements.forEach(el => el.classList.add('reveal'));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // تأثير الهيدر الزجاجي عند التمرير
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        nav?.classList.add('scrolled');
+      } else {
+        nav?.classList.remove('scrolled');
+      }
+    });
+  });
 })();
