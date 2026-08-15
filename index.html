@@ -3,446 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شركة نال التشيد للمقاولات المعمارية</title>
-    <meta name="description" content="شركة نال التشيد للمقاولات المعمارية - تنفيذ الأعمال المدنية والمعمارية وتقدير التكاليف بعرعر، المملكة العربية السعودية.">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title data-i18n="page-title">شركة نال التشيد للمقاولات المعمارية</title>
+    <link rel="stylesheet" href="style.css">
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Schema.org Structured Data -->
+    <!-- البيانات المنظمة لمحركات البحث (Schema.org) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "شركة نال التشيد للمقاولات المعمارية",
-      "image": "https://nalaltsheed.com/logo.png",
-      "email": "info@nalaltsheed.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "3834 شارع المهند، 8467",
+        "streetAddress": "حي المحمدية",
         "addressLocality": "عرعر",
-        "addressRegion": "المنطقة الشمالية",
-        "postalCode": "73311",
         "addressCountry": "SA"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 30.9753,
-        "longitude": 41.0381
-      },
+      "email": "info@nalaltsheed.com",
       "url": "https://nalaltsheed.com"
     }
     </script>
-
-    <style>
-        :root {
-            --primary-color: #1b365d;
-            --accent-color: #c59b27;
-            --dark-color: #1a1a1a;
-            --light-color: #f8f9fa;
-            --gray-color: #6c757d;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        body {
-            background-color: var(--light-color);
-            color: var(--dark-color);
-            line-height: 1.6;
-        }
-
-        /* Header */
-        header {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 1rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #fff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo span {
-            color: var(--accent-color);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(27, 54, 93, 0.85), rgba(27, 54, 93, 0.85)), url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            padding: 100px 5% 80px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: background 0.3s, transform 0.2s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #a8821f;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid #fff;
-            margin-right: 10px;
-        }
-
-        .btn-outline:hover {
-            background-color: #fff;
-            color: var(--primary-color);
-        }
-
-        /* Container & Sections */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent-color);
-            margin: 10px auto 0;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-card i {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        /* Location Section */
-        .location-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            background: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-
-        @media (max-width: 768px) {
-            .location-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .location-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .info-item i {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            margin-top: 5px;
-        }
-
-        .info-item h4 {
-            color: var(--primary-color);
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        .info-item p {
-            color: var(--gray-color);
-            font-size: 0.95rem;
-        }
-
-        .address-box {
-            background-color: #f1f5f9;
-            border-right: 4px solid var(--accent-color);
-            padding: 15px 20px;
-            border-radius: 4px;
-            margin-top: 10px;
-            font-weight: 500;
-        }
-
-        .map-box {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            min-height: 350px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 40px 5% 20px;
-            text-align: center;
-        }
-
-        .footer-content {
-            margin-bottom: 20px;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
-            font-size: 0.9rem;
-            color: #ccc;
-        }
-
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            background-color: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: transform 0.3s;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-    </style>
 </head>
 <body>
 
-    <!-- Navigation Header -->
+    <!-- القائمة العلوية -->
     <header>
-        <nav class="navbar">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-building-user"></i>
-                شركة نال <span>التشيد</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#services">خدماتنا</a></li>
-                <li><a href="#location">موقعنا</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
+        <div class="logo" data-i18n="company-name">شركة نال التشيد</div>
+        <nav>
+            <ul>
+                <li><a href="#home" data-i18n="nav-home">الرئيسية</a></li>
+                <li><a href="#about" data-i18n="nav-about">من نحن</a></li>
+                <li><a href="#services" data-i18n="nav-services">خدماتنا</a></li>
+                <li><a href="#projects" data-i18n="nav-projects">مشاريعنا</a></li>
+                <li><a href="#equipment" data-i18n="nav-equipment">المعدات</a></li>
+                <li><a href="#faq" data-i18n="nav-faq">الأسئلة الشائعة</a></li>
+                <li><a href="#contact" data-i18n="nav-contact">اتصل بنا</a></li>
             </ul>
         </nav>
+        <button id="lang-switch-btn" data-i18n="btn-lang">English</button>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <h1>شركة نال التشيد للمقاولات المعمارية</h1>
-        <p>جودة، تميز، ودقة في تنفيذ المشاريع المعمارية والإنشائية وتقديم التكاليف بمدينة عرعر وكافة مناطق المملكة.</p>
-        <div>
-            <a href="https://www.google.com/maps/search/?api=1&query=SHAC3834%D8%8C+3834+%D8%A7%D9%84%D9%85%D9%87%D9%86%D8%AF%D8%8C+8467%D8%8C+%D8%AD%D9%8A+%D8%A7%D9%84%D9%85%D8%AD%D9%85%D8%AF%D9%8A%D8%A9%D8%8C+%D8%B9%D8%B1%D8%B1+73311%D8%8C+%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D8%A0%D9%8A%D8%A9+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9" target="_blank" class="btn">
-                <i class="fa-solid fa-map-location-dot"></i> فتح الموقع في خرائط Google
-            </a>
-            <a href="mailto:info@nalaltsheed.com" class="btn btn-outline">
-                <i class="fa-solid fa-envelope"></i> راسلنا عبر البريد
-            </a>
+    <!-- القسم الرئيسي -->
+    <section id="home">
+        <h1 data-i18n="hero-title">مرحباً بكم في شركة نال التشيد للمقاولات المعمارية</h1>
+        <p data-i18n="hero-subtitle">نبني المستقبل بجودة واحترافية</p>
+        <a href="profile.pdf" download class="btn" data-i18n="btn-download">تحميل الملف التعريفي</a>
+    </section>
+
+    <!-- قسم من نحن -->
+    <section id="about">
+        <h2 data-i18n="nav-about">من نحن</h2>
+        <p data-i18n="about-text">نحن شركة رائدة في مجال المقاولات العامة والتصاميم الهندسية، ملتزمون بتقديم أفضل الخدمات المبتكرة والموثوقة في جميع أنحاء المملكة.</p>
+    </section>
+
+    <!-- قسم الخدمات -->
+    <section id="services">
+        <h2 data-i18n="nav-services">خدماتنا</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3 data-i18n="service-1-title">المقاولات العامة</h3>
+                <p data-i18n="service-1-desc">تنفيذ جميع الأعمال الإنشائية والمعمارية بأعلى معايير الجودة.</p>
+            </div>
+            <div class="service-card">
+                <h3 data-i18n="service-2-title">التصاميم الهندسية</h3>
+                <p data-i18n="service-2-desc">حلول هندسية متكاملة تناسب جميع المتطلبات.</p>
+            </div>
+            <div class="service-card">
+                <h3 data-i18n="service-3-title">إدارة أسطول المعدات الثقيلة</h3>
+                <p data-i18n="service-3-desc">توفير وإدارة أحدث المعدات الثقيلة للمشاريع الكبرى.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <div class="container" id="services">
-        <h2 class="section-title">خدماتنا المتميزة</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fa-solid fa-helmet-safety"></i>
-                <h3>المقاولات العامة والإنشاءات</h3>
-                <p>تنفيذ الأعمال المعمارية والمدنية وفق أعلى المعايير الهندسية وأعلى مستويات الجودة.</p>
+    <!-- قسم المشاريع -->
+    <section id="projects">
+        <h2 data-i18n="nav-projects">مشاريعنا</h2>
+        <div class="projects-gallery">
+            <div class="project-item">
+                <h3 data-i18n="project-1-title">صيانة المرافق التعليمية</h3>
             </div>
-            <div class="service-card">
-                <i class="fa-solid fa-calculator"></i>
-                <h3>حساب وتقدير التكاليف</h3>
-                <p>إعداد جداول الكميات ودراسة تكاليف التوريد والتركيب والعمالة بدقة عالية.</p>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-                <h3>أعمال الترميم الصيانة</h3>
-                <p>تقديم خدمات الصيانة الجذرية والترميم الشامل للمباني والمنشآت العامة والخاصة.</p>
+            <div class="project-item">
+                <h3 data-i18n="project-2-title">ترميم مباني الدفاع المدني</h3>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Location & Contact Section -->
-    <div class="container" id="location">
-        <h2 class="section-title">موقع المقر الرئيسي</h2>
-        <div class="location-container" id="contact">
-            <!-- Location Details -->
-            <div class="location-info">
-                <h3>تفضل بزيارتنا في مقر الشركة</h3>
-                <p style="margin-bottom: 25px; color: #555;">يسعدنا استقبالكم في مقر شركة نال التشيد للمقاولات المعمارية خلال أوقات العمل الرسمية.</p>
-
-                <div class="info-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div>
-                        <h4>العنوان الوطني المختصر:</h4>
-                        <div class="address-box">
-                            SHAC3834، 3834 المهند، 8467، حي المحمدية، عرعر 73311، المملكة العربية السعودية
-                        </div>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <div>
-                        <h4>البريد الإلكتروني:</h4>
-                        <p><a href="mailto:info@nalaltsheed.com" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">info@nalaltsheed.com</a></p>
-                    </div>
-                </div>
-
-                <div style="margin-top: 15px;">
-                    <a href="https://www.google.com/maps/search/?api=1&query=SHAC3834%D8%8C+3834+%D8%A7%D9%84%D9%85%D9%87%D9%86%D8%AF%D8%8C+8467%D8%8C+%D8%AD%D9%8A+%D8%A7%D9%84%D9%85%D8%AD%D9%85%D8%AF%D9%8A%D8%A9%D8%8C+%D8%B9%D8%B1%D8%B1+73311%D8%8C+%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D8%A0%D9%8A%D8%A9+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9" target="_blank" class="btn" style="width: 100%; text-align: center;">
-                        <i class="fa-solid fa-diamond-turn-right"></i> توجيه عبر خرائط Google
-                    </a>
-                </div>
-            </div>
-
-            <!-- Embedded Interactive Map -->
-            <div class="map-box">
-                <iframe 
-                    src="https://maps.google.com/maps?q=SHAC3834%203834%20%D8%A7%D9%84%D9%85%D9%87%D9%86%D8%AF%20%D8%AD%D9%8A%20%D8%A7%D9%84%D9%85%D8%AD%D9%85%D8%AF%D9%8A%D8%A9%20%D8%B9%D8%B1%D8%B1%2073311%20%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A0%D9%8A%D8%A9%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0; min-height: 380px;" 
-                    allowfullscreen="" 
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
+    <!-- قسم المعدات (مع التكبير Lightbox) -->
+    <section id="equipment">
+        <h2 data-i18n="nav-equipment">المعدات</h2>
+        <div class="gallery">
+            <!-- ضع مسارات الصور الخاصة بك هنا -->
+            <img src="eq1.jpg" alt="معدة 1" class="lightbox-img" data-i18n-alt="eq-1-alt">
+            <img src="eq2.jpg" alt="معدة 2" class="lightbox-img" data-i18n-alt="eq-2-alt">
         </div>
-    </div>
+        <!-- نافذة عرض الصور (Lightbox Modal) -->
+        <div id="lightbox" class="lightbox">
+            <span class="close-lightbox">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+    </section>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/966553880280" class="whatsapp-float" target="_blank" aria-label="تواصل معنا عبر واتساب">
-        <i class="fa-brands fa-whatsapp"></i>
+    <!-- طلب عرض سعر / حساب التكلفة -->
+    <section id="quote">
+        <h2 data-i18n="quote-title">طلب عرض سعر / حساب التكلفة</h2>
+        <form id="quote-form">
+            <input type="text" placeholder="الاسم" data-i18n-placeholder="quote-name" required>
+            <input type="email" placeholder="البريد الإلكتروني" data-i18n-placeholder="quote-email" required>
+            <textarea placeholder="تفاصيل الطلب" data-i18n-placeholder="quote-details" required></textarea>
+            <button type="submit" data-i18n="btn-submit">إرسال الطلب</button>
+        </form>
+    </section>
+
+    <!-- الأسئلة الشائعة -->
+    <section id="faq">
+        <h2 data-i18n="nav-faq">الأسئلة الشائعة</h2>
+        <div class="faq-item">
+            <h4 data-i18n="faq-1-q">أين يقع مقر الشركة؟</h4>
+            <p data-i18n="faq-1-a">يقع المقر الرئيسي في حي المحمدية بعرعر.</p>
+        </div>
+    </section>
+
+    <!-- اتصل بنا -->
+    <section id="contact">
+        <h2 data-i18n="nav-contact">اتصل بنا</h2>
+        <p><span data-i18n="contact-email-text">البريد الإلكتروني:</span> <a href="mailto:info@nalaltsheed.com">info@nalaltsheed.com</a></p>
+        <p><span data-i18n="contact-address-text">العنوان:</span> <span data-i18n="contact-address-val">حي المحمدية، عرعر، المملكة العربية السعودية</span></p>
+        
+        <!-- خريطة العنوان الوطني -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps?q=Arar,Al-Mohammadiyah&output=embed" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </section>
+
+    <!-- زر واتساب العائم -->
+    <a href="#" id="whatsapp-btn" class="whatsapp-float" target="_blank" data-i18n-title="wa-title">
+        <img src="wa-icon.png" alt="WhatsApp"> <!-- تأكد من وجود مسار صورة أيقونة واتساب هنا -->
     </a>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <h3>شركة نال التشيد للمقاولات المعمارية</h3>
-            <p>عرعر - حي المحمدية - شارع المهند | البريد الإلكتروني: info@nalaltsheed.com</p>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 شركة نال التشيد للمقاولات المعمارية. جميع الحقوق محفوظة.</p>
-        </div>
-    </footer>
-
+    <!-- ربط ملف الجافاسكريبت -->
+    <script src="script.js"></script>
 </body>
 </html>
