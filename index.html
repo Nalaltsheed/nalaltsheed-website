@@ -26,8 +26,10 @@
 <body>
 
     <!-- القائمة العلوية -->
-    <header>
-        <div class="logo" data-i18n="company-name">شركة نال التشيد</div>
+    <header class="nav">
+        <div class="brand">
+            <span data-i18n="company-name">شركة نال التشيد</span>
+        </div>
         <nav>
             <ul>
                 <li><a href="#home" data-i18n="nav-home">الرئيسية</a></li>
@@ -39,26 +41,36 @@
                 <li><a href="#contact" data-i18n="nav-contact">اتصل بنا</a></li>
             </ul>
         </nav>
-        <button id="lang-switch-btn" data-i18n="btn-lang">English</button>
+        <div class="lang-switch">
+            <button id="lang-switch-btn" data-i18n="btn-lang">English</button>
+        </div>
     </header>
 
     <!-- القسم الرئيسي -->
-    <section id="home">
-        <h1 data-i18n="hero-title">مرحباً بكم في شركة نال التشيد للمقاولات المعمارية</h1>
-        <p data-i18n="hero-subtitle">نبني المستقبل بجودة واحترافية</p>
-        <a href="profile.pdf" download class="btn" data-i18n="btn-download">تحميل الملف التعريفي</a>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 data-i18n="hero-title">مرحباً بكم في شركة نال التشيد للمقاولات المعمارية</h1>
+            <p class="hero-copy" data-i18n="hero-subtitle">نبني المستقبل بجودة واحترافية</p>
+            <a href="profile.pdf" download class="btn" data-i18n="btn-download">تحميل الملف التعريفي</a>
+        </div>
     </section>
 
     <!-- قسم من نحن -->
-    <section id="about">
-        <h2 data-i18n="nav-about">من نحن</h2>
-        <p data-i18n="about-text">نحن شركة رائدة في مجال المقاولات العامة والتصاميم الهندسية، ملتزمون بتقديم أفضل الخدمات المبتكرة والموثوقة في جميع أنحاء المملكة.</p>
+    <section id="about" class="section light">
+        <div class="section-head">
+            <span data-i18n="about-badge">01</span>
+            <h2 data-i18n="nav-about">من نحن</h2>
+        </div>
+        <p class="lead" data-i18n="about-text">نحن شركة رائدة في مجال المقاولات العامة والتصاميم الهندسية، ملتزمون بتقديم أفضل الخدمات المبتكرة والموثوقة في جميع أنحاء المملكة.</p>
     </section>
 
     <!-- قسم الخدمات -->
-    <section id="services">
-        <h2 data-i18n="nav-services">خدماتنا</h2>
-        <div class="services-grid">
+    <section id="services" class="section">
+        <div class="section-head">
+            <span data-i18n="services-badge">02</span>
+            <h2 data-i18n="nav-services">خدماتنا</h2>
+        </div>
+        <div class="service-grid">
             <div class="service-card">
                 <h3 data-i18n="service-1-title">المقاولات العامة</h3>
                 <p data-i18n="service-1-desc">تنفيذ جميع الأعمال الإنشائية والمعمارية بأعلى معايير الجودة.</p>
@@ -75,68 +87,104 @@
     </section>
 
     <!-- قسم المشاريع -->
-    <section id="projects">
-        <h2 data-i18n="nav-projects">مشاريعنا</h2>
-        <div class="projects-gallery">
-            <div class="project-item">
+    <section id="projects" class="section light">
+        <div class="section-head">
+            <span data-i18n="projects-badge">03</span>
+            <h2 data-i18n="nav-projects">مشاريعنا</h2>
+        </div>
+        <div class="gov-grid">
+            <div class="gov-card">
                 <h3 data-i18n="project-1-title">صيانة المرافق التعليمية</h3>
             </div>
-            <div class="project-item">
+            <div class="gov-card">
                 <h3 data-i18n="project-2-title">ترميم مباني الدفاع المدني</h3>
             </div>
         </div>
     </section>
 
-    <!-- قسم المعدات (مع التكبير Lightbox) -->
-    <section id="equipment">
-        <h2 data-i18n="nav-equipment">المعدات</h2>
-        <div class="gallery">
-            <!-- ضع مسارات الصور الخاصة بك هنا -->
-            <img src="eq1.jpg" alt="معدة 1" class="lightbox-img" data-i18n-alt="eq-1-alt">
-            <img src="eq2.jpg" alt="معدة 2" class="lightbox-img" data-i18n-alt="eq-2-alt">
+    <!-- قسم المعدات -->
+    <section id="equipment" class="section">
+        <div class="section-head">
+            <span data-i18n="equipment-badge">04</span>
+            <h2 data-i18n="nav-equipment">المعدات</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="eq1.jpg" alt="معدة 1" class="lightbox-img" data-i18n-alt="eq-1-alt">
+                <div class="gallery-caption" data-i18n="eq-1-alt">معدة 1</div>
+            </div>
+            <div class="gallery-item">
+                <img src="eq2.jpg" alt="معدة 2" class="lightbox-img" data-i18n-alt="eq-2-alt">
+                <div class="gallery-caption" data-i18n="eq-2-alt">معدة 2</div>
+            </div>
         </div>
         <!-- نافذة عرض الصور (Lightbox Modal) -->
-        <div id="lightbox" class="lightbox">
-            <span class="close-lightbox">&times;</span>
-            <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox" class="modal">
+            <div class="modal-overlay"></div>
+            <div class="lightbox-box">
+                <button class="modal-close">&times;</button>
+                <img id="lightbox-img" src="" alt="">
+            </div>
         </div>
     </section>
 
     <!-- طلب عرض سعر / حساب التكلفة -->
-    <section id="quote">
-        <h2 data-i18n="quote-title">طلب عرض سعر / حساب التكلفة</h2>
-        <form id="quote-form">
-            <input type="text" placeholder="الاسم" data-i18n-placeholder="quote-name" required>
-            <input type="email" placeholder="البريد الإلكتروني" data-i18n-placeholder="quote-email" required>
-            <textarea placeholder="تفاصيل الطلب" data-i18n-placeholder="quote-details" required></textarea>
-            <button type="submit" data-i18n="btn-submit">إرسال الطلب</button>
-        </form>
+    <section id="quote" class="section light">
+        <div class="section-head" style="justify-content: center; text-align: center;">
+            <h2 data-i18n="quote-title" style="width: 100%;">طلب عرض سعر / حساب التكلفة</h2>
+        </div>
+        <div class="estimator-card">
+            <form id="quote-form">
+                <div class="form-group">
+                    <label data-i18n="quote-name-label">الاسم</label>
+                    <input type="text" placeholder="الاسم" data-i18n-placeholder="quote-name" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="quote-email-label">البريد الإلكتروني</label>
+                    <input type="email" placeholder="البريد الإلكتروني" data-i18n-placeholder="quote-email" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="quote-details-label">تفاصيل الطلب</label>
+                    <textarea placeholder="تفاصيل الطلب" data-i18n-placeholder="quote-details" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-full" data-i18n="btn-submit">إرسال الطلب</button>
+            </form>
+        </div>
     </section>
 
     <!-- الأسئلة الشائعة -->
-    <section id="faq">
-        <h2 data-i18n="nav-faq">الأسئلة الشائعة</h2>
-        <div class="faq-item">
-            <h4 data-i18n="faq-1-q">أين يقع مقر الشركة؟</h4>
-            <p data-i18n="faq-1-a">يقع المقر الرئيسي في حي المحمدية بعرعر.</p>
+    <section id="faq" class="section">
+        <div class="section-head">
+            <span data-i18n="faq-badge">05</span>
+            <h2 data-i18n="nav-faq">الأسئلة الشائعة</h2>
+        </div>
+        <div class="info-card" style="max-width: 800px; margin: 0 auto; text-align: start;">
+            <h3 data-i18n="faq-1-q">أين يقع مقر الشركة؟</h3>
+            <p data-i18n="faq-1-a" style="color: var(--muted);">يقع المقر الرئيسي في حي المحمدية بعرعر.</p>
         </div>
     </section>
 
     <!-- اتصل بنا -->
-    <section id="contact">
-        <h2 data-i18n="nav-contact">اتصل بنا</h2>
-        <p><span data-i18n="contact-email-text">البريد الإلكتروني:</span> <a href="mailto:info@nalaltsheed.com">info@nalaltsheed.com</a></p>
-        <p><span data-i18n="contact-address-text">العنوان:</span> <span data-i18n="contact-address-val">حي المحمدية، عرعر، المملكة العربية السعودية</span></p>
-        
-        <!-- خريطة العنوان الوطني -->
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps?q=Arar,Al-Mohammadiyah&output=embed" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <section id="contact" class="section light">
+        <div class="section-head">
+            <span data-i18n="contact-badge">06</span>
+            <h2 data-i18n="nav-contact">اتصل بنا</h2>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto; text-align: start;">
+            <p style="margin-bottom: 15px;"><strong data-i18n="contact-email-text">البريد الإلكتروني:</strong> <a href="mailto:info@nalaltsheed.com" class="contact-link">info@nalaltsheed.com</a></p>
+            <p style="margin-bottom: 25px;"><strong data-i18n="contact-address-text">العنوان:</strong> <span data-i18n="contact-address-val" style="color: var(--muted);">حي المحمدية، عرعر، المملكة العربية السعودية</span></p>
+            
+            <!-- خريطة العنوان الوطني -->
+            <div class="map-container" style="border-radius: 8px; overflow: hidden;">
+                <iframe src="https://www.google.com/maps?q=Arar,Al-Mohammadiyah&output=embed" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
         </div>
     </section>
 
     <!-- زر واتساب العائم -->
-    <a href="#" id="whatsapp-btn" class="whatsapp-float" target="_blank" data-i18n-title="wa-title">
-        <img src="wa-icon.png" alt="WhatsApp"> <!-- تأكد من وجود مسار صورة أيقونة واتساب هنا -->
+    <a href="#" id="whatsapp-btn" class="whatsapp-float" target="_blank">
+        <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span class="wa-tooltip" data-i18n="wa-title">تواصل معنا</span>
     </a>
 
     <!-- ربط ملف الجافاسكريبت -->
