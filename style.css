@@ -1,7 +1,5 @@
-/* استيراد خط القاهرة من جوجل بجميع الأوزان المطلوبة */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
 
-/* المتغيرات الجمالية من تصميمك القديم */
 :root {
   --navy: #0e2038;
   --gold: #c5a059;
@@ -27,7 +25,7 @@ html {
 }
 
 body {
-  background-color: var(--light);
+  background-color: var(--white);
   color: var(--dark);
   line-height: 1.7;
   overflow-x: hidden;
@@ -38,10 +36,8 @@ a {
   color: inherit;
 }
 
-/* -------------------------------------
-   Header & Nav
-------------------------------------- */
-header {
+/* Header & Nav */
+.nav {
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -55,10 +51,18 @@ header {
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
-.logo {
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--gold);
+}
+
+nav {
+  display: flex;
+  gap: 20px;
 }
 
 nav ul {
@@ -72,7 +76,6 @@ nav a {
   font-weight: 600;
   transition: var(--transition);
   opacity: 0.9;
-  color: var(--white);
 }
 
 nav a:hover {
@@ -80,8 +83,7 @@ nav a:hover {
   opacity: 1;
 }
 
-/* زر تغيير اللغة */
-#lang-switch-btn {
+.lang-switch button {
   background: transparent;
   border: 1px solid var(--gold);
   color: var(--white);
@@ -92,58 +94,43 @@ nav a:hover {
   transition: var(--transition);
 }
 
-#lang-switch-btn:hover {
+.lang-switch button:hover {
   background: var(--gold);
   color: var(--navy);
 }
 
-/* -------------------------------------
-   General Sections
-------------------------------------- */
-section {
-  padding: 80px 5%;
-  text-align: center;
-}
-
-section h2 {
-  font-size: 2.2rem;
-  color: var(--navy);
-  margin-bottom: 40px;
-  font-weight: 800;
-}
-
-/* -------------------------------------
-   Hero Section (القسم الرئيسي)
-------------------------------------- */
-#home {
+/* Hero Section */
+.hero {
   background: linear-gradient(135deg, var(--navy) 0%, #1a365d 100%);
   color: var(--white);
-  padding: 120px 5%;
+  padding: 100px 5%;
+  text-align: center;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
 }
 
-#home h1 {
+.hero-content {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.hero h1 {
   font-size: 2.8rem;
   line-height: 1.3;
+  margin-bottom: 20px;
   font-weight: 800;
   color: var(--gold);
 }
 
-#home p {
+.hero-copy {
   font-size: 1.15rem;
   color: var(--gray);
-  margin-bottom: 20px;
-  max-width: 650px;
+  margin-bottom: 30px;
 }
 
-/* -------------------------------------
-   Buttons
-------------------------------------- */
-.btn, #quote-form button {
+/* Buttons */
+.btn {
   display: inline-block;
   background: var(--gold);
   color: var(--navy);
@@ -154,110 +141,128 @@ section h2 {
   cursor: pointer;
   transition: var(--transition);
   box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
-  font-size: 1rem;
 }
 
-.btn:hover, #quote-form button:hover {
+.btn:hover {
   background: var(--gold-hover);
   transform: translateY(-2px);
 }
 
-/* -------------------------------------
-   Grids & Cards (الخدمات والمشاريع)
-------------------------------------- */
-.services-grid, .projects-gallery, .gallery {
+.btn-full {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+}
+
+/* Sections General */
+.section {
+  padding: 80px 5%;
+}
+
+.section.light {
+  background-color: var(--light);
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.section-head span {
+  color: var(--gold);
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.section-head h2 {
+  font-size: 2.2rem;
+  color: var(--navy);
+  font-weight: 800;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  max-width: 800px;
+}
+
+/* Grids & Cards */
+.service-grid, .gov-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
-.service-card, .project-item, .faq-item {
+.service-card, .gov-card, .info-card {
   background: var(--white);
   padding: 30px;
   border-radius: 8px;
   border: 1px solid var(--gray);
   box-shadow: var(--shadow);
   transition: var(--transition);
-  /* جعل النص يبدأ من اليمين أو اليسار حسب لغة الموقع */
-  text-align: start; 
+  text-align: start;
 }
 
-.service-card:hover, .project-item:hover {
+.service-card:hover, .gov-card:hover, .info-card:hover {
   transform: translateY(-5px);
   border-color: var(--gold);
 }
 
-.service-card h3, .project-item h3, .faq-item h4 {
+.service-card h3, .gov-card h3, .info-card h3 {
   color: var(--navy);
   margin-bottom: 12px;
   font-size: 1.3rem;
   font-weight: 700;
 }
 
-.faq-item {
-  max-width: 800px;
-  margin: 0 auto 20px auto;
+.service-card p, .gov-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
-/* -------------------------------------
-   Gallery & Lightbox (معرض الصور وتكبيرها)
-------------------------------------- */
-.gallery img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
+/* Gallery & Equipment */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
   border-radius: 8px;
-  cursor: pointer;
+  overflow: hidden;
   box-shadow: var(--shadow);
-  transition: var(--transition);
-}
-
-.gallery img:hover {
-  transform: scale(1.03);
-}
-
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(14, 32, 56, 0.95); /* لون خلفية من الـ Navy الخاص بك */
-}
-
-.lightbox-content {
-  margin: auto;
-  display: block;
-  max-width: 90%;
-  max-height: 80vh;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-
-.close-lightbox {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  color: var(--white);
-  font-size: 50px;
-  font-weight: bold;
   cursor: pointer;
+  background: var(--white);
+  border: 1px solid var(--gray);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
   transition: var(--transition);
+  display: block;
 }
 
-.close-lightbox:hover {
-  color: var(--gold);
+.gallery-item:hover img {
+  transform: scale(1.05);
 }
 
-/* -------------------------------------
-   Cost Estimator & Forms (نموذج التواصل)
-------------------------------------- */
-#quote-form {
+.gallery-caption {
+  padding: 15px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--navy);
+  text-align: center;
+  background: var(--white);
+}
+
+/* Cost Estimator & Forms */
+.estimator-card {
   background: var(--white);
   padding: 40px;
   border-radius: 12px;
@@ -265,12 +270,23 @@ section h2 {
   border: 1px solid var(--gray);
   max-width: 800px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  text-align: start;
 }
 
-#quote-form input, #quote-form textarea {
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 0.95rem;
+}
+
+.form-group input, .form-group textarea {
   padding: 12px 15px;
   border: 1px solid var(--gray);
   border-radius: 6px;
@@ -280,69 +296,53 @@ section h2 {
   width: 100%;
 }
 
-#quote-form textarea {
-  height: 150px;
+.form-group textarea {
+  height: 140px;
   resize: vertical;
 }
 
-#quote-form input:focus, #quote-form textarea:focus {
+.form-group input:focus, .form-group textarea:focus {
   outline: none;
   border-color: var(--gold);
   box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
 }
 
-/* -------------------------------------
-   Contact Info & Map
-------------------------------------- */
-#contact p {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-#contact a {
-    color: var(--navy);
-    font-weight: bold;
-    transition: var(--transition);
-}
-#contact a:hover {
-    color: var(--gold);
+.contact-link {
+  color: var(--navy);
+  font-weight: 700;
+  transition: var(--transition);
 }
 
-.map-container {
-  max-width: 1000px;
-  margin: 40px auto 0;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--gray);
+.contact-link:hover {
+  color: var(--gold);
 }
 
-/* -------------------------------------
-   Dynamic WhatsApp Float Button
-------------------------------------- */
+/* Dynamic WhatsApp Float Button */
 .whatsapp-float {
   position: fixed;
   bottom: 25px;
   background-color: #25d366;
+  color: #fff;
   border-radius: 50px;
-  padding: 12px;
+  padding: 12px 18px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
   box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
   z-index: 999;
   transition: var(--transition);
 }
 
-.whatsapp-float img {
-  width: 35px;
-  height: 35px;
-}
-
 .whatsapp-float:hover {
-  transform: translateY(-4px) scale(1.05);
+  transform: translateY(-4px) scale(1.03);
 }
 
-/* تعديل موقع الواتساب بناءً على لغة الموقع (RTL/LTR) */
+.wa-tooltip {
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 html[dir="rtl"] .whatsapp-float {
   left: 25px;
   right: auto;
@@ -353,33 +353,91 @@ html[dir="ltr"] .whatsapp-float {
   left: auto;
 }
 
-/* -------------------------------------
-   Mobile Responsiveness (دعم الجوال)
-------------------------------------- */
+/* Modals & Lightbox */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(4px);
+}
+
+.lightbox-box {
+  position: relative;
+  background: transparent;
+  padding: 0;
+  text-align: center;
+  max-width: 90vw;
+  z-index: 2001;
+}
+
+.lightbox-box img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.modal-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: transparent;
+  border: none;
+  font-size: 2.5rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.modal-close:hover {
+  color: var(--gold);
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-  header {
+  .nav {
     flex-direction: column;
     gap: 15px;
+    padding: 15px 20px;
   }
 
-  nav ul {
+  nav {
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
   }
 
-  #home h1 {
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .hero h1 {
     font-size: 2.1rem;
   }
-  
-  .close-lightbox {
-    top: 10px;
-    right: 20px;
+
+  .wa-tooltip {
+    display: none;
   }
-  
+
   .whatsapp-float {
-    bottom: 15px;
+    padding: 12px;
   }
+  
   html[dir="rtl"] .whatsapp-float {
     left: 15px;
   }
