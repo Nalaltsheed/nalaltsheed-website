@@ -1,157 +1,202 @@
-(function(){
-  // --- 1. Modal Logic ---
-  const modals = document.querySelectorAll('.modal');
-  const openers = document.querySelectorAll('[data-modal]');
-
-  function openModal(id){
-    const modal = document.getElementById(id);
-    if(!modal) return;
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden','false');
-    document.body.classList.add('modal-open');
-    const close = modal.querySelector('.modal-close');
-    if(close) setTimeout(()=>close.focus(),40);
+// Dictionary Translations for AR / EN
+const translations = {
+  ar: {
+    brand: "شركة نال التشيد",
+    aboutNav: "عن الشركة",
+    servicesNav: "خدماتنا",
+    projectsNav: "مشاريعنا",
+    equipmentNav: "المعدات",
+    faqNav: "الأسئلة الشائعة",
+    contactNav: "تواصل معنا",
+    eyebrow: "NAL AL TSHEED COMPANY FOR ARCHITECTURAL CONTRACTING",
+    heroTitle: "شركة <span>نال التشيد</span> للمقاولات المعمارية",
+    heroCopy: "رائدون في تقديم الحلول المعمارية والإنشائية المتكاملة وفق أعلى معايير الجودة العالمية والدقة في التنفيذ.",
+    contactBtn: "تواصل معنا",
+    profileBtn: "الملف التعريفي",
+    sec1Title: "خدماتنا ونطاق العمل",
+    sec1Lead: "نقدم مجموعة شاملة من الخدمات الهندسية والإنشائية لتلبية تطلعات عملائنا في قطاع التشييد والمقاولات.",
+    s1Title: "المقاولات العامة والتشييد",
+    s2Title: "التصاميم والحلول المعمارية",
+    s3Title: "إدارة وتوفير المعدات",
+    sec2Title: "عن نال التشيد",
+    a1Title: "رؤيتنا ورسالتنا",
+    a1Text: "نسعى للارتقاء بقطاع المقاولات المعمارية من خلال اعتماد أحدث التقنيات الهندسية وأسطول معدات متطور لضمان تنفيذ المشاريع بأعلى جودة وفي المواعيد المحددة.",
+    a2Title: "خبراتنا الميدانية",
+    a2Text: "تمتلك الشركة سجلاً حافلاً بالنجاحات في تنفيذ وإدارة المشاريع المعمارية المتنوعة برؤية إنشائية مستدامة.",
+    secProjectsTitle: "مشاريعنا وأعمالنا",
+    secProjectsLead: "جانب من المشاريع والأعمال الميدانية التي تم تنفيذها بواسطة فريق شركة نال التشيد.",
+    secEquipTitle: "أسطول المعدات والبروفايل",
+    secEquipLead: "تتجهز الشركة بأسطول متكامل من الآليات والمعدات الثقيلة لتنفيذ أضخم المشاريع الإنشائية بكفاءة عالية.",
+    p1Cap: "أعمال الانشاءات والتشييد",
+    p2Cap: "مشاريع الهياكل الإنشائية",
+    p3Cap: "أعمال التجهيزات المعمارية",
+    p4Cap: "التطوير الميداني والتنفيذ",
+    p5Cap: "أعمال الصب والخرسانة",
+    p6Cap: "إدارة المواقع والتشطيبات",
+    e1Cap: "أسطول الآليات والمعدات",
+    e2Cap: "معدات الحفر والردم",
+    e3Cap: "آليات النقل والرفع",
+    e4Cap: "معدات التشييد الثقيلة",
+    e5Cap: "تجهيزات الموقع والمساندة",
+    e6Cap: "الآليات الميدانية المتطورة",
+    sec3Title: "الأسئلة الشائعة",
+    f1Q: "ما هي الخدمات التي تقدمها شركة نال التشيد؟",
+    f1A: "تقدم شركة نال التشيد خدمات المقاولات المعمارية العامة، والتشييد البنائي، والحلول الهندسية المتكاملة، إلى جانب إدارة وتأجير معدات التشييد البنائي.",
+    f2Q: "أين تعمل شركة نال التشيد في السعودية؟",
+    f2A: "تغطي خدماتنا كافة مناطق المملكة العربية السعودية مع توفير الإشراف الميداني الكامل وأسطول المعدات اللازم للمشاريع.",
+    sec4Title: "تواصل معنا",
+    sec4Lead: "سعداء بتواصلكم ومستعدون لمناقشة كافة تفاصيل مشروعكم القادم.",
+    addrTitle: "العنوان والموقع",
+    addrText: "SHAC3834، 3834 المهند، 8467، حي المحمدية، عرعر 73311، المملكة العربية السعودية",
+    contactTitle: "بيانات الاتصال",
+    phoneHeader: "أرقام الاتصال والمبيعات:",
+    modalTitle: "الملف التعريفي لشركة نال التشيد",
+    modalDesc: "يمكنك استعراض أو تحميل الكتالوج الشامل لأسطول المعدات والمشاريع الخاص بالشركة بصيغة PDF.",
+    modalDownload: "تحميل الملف التعريفي (PDF)",
+    modalPreview: "معاينة بعض صفحات البروفايل:",
+    rights: "جميع الحقوق محفوظة © شركة نال التشيد للمقاولات المعمارية"
+  },
+  en: {
+    brand: "Nal Al Tsheed",
+    aboutNav: "About Us",
+    servicesNav: "Services",
+    projectsNav: "Projects",
+    equipmentNav: "Equipment",
+    faqNav: "FAQ",
+    contactNav: "Contact Us",
+    eyebrow: "NAL AL TSHEED COMPANY FOR ARCHITECTURAL CONTRACTING",
+    heroTitle: "<span>Nal Al Tsheed</span> Architectural Contracting",
+    heroCopy: "Leaders in providing integrated architectural and construction solutions according to the highest global quality standards.",
+    contactBtn: "Contact Us",
+    profileBtn: "Company Profile",
+    sec1Title: "Our Services & Scope",
+    sec1Lead: "We offer a comprehensive range of engineering and construction services to meet our clients' aspirations.",
+    s1Title: "General Contracting & Construction",
+    s2Title: "Architectural Design & Solutions",
+    s3Title: "Equipment Management & Supply",
+    sec2Title: "About Nal Al Tsheed",
+    a1Title: "Our Vision & Mission",
+    a1Text: "We strive to elevate the architectural contracting sector by adopting latest engineering technologies and an advanced equipment fleet.",
+    a2Title: "Field Experience",
+    a2Text: "The company has a proven track record in executing and managing diverse architectural projects with a sustainable vision.",
+    secProjectsTitle: "Our Projects & Work",
+    secProjectsLead: "A glimpse of field projects and site operations executed by Nal Al Tsheed team.",
+    secEquipTitle: "Equipment Fleet & Profile",
+    secEquipLead: "Equipped with a comprehensive fleet of heavy machinery to carry out large-scale construction projects efficiently.",
+    p1Cap: "Building Construction Works",
+    p2Cap: "Structural Framing Projects",
+    p3Cap: "Architectural Fit-Outs",
+    p4Cap: "Site Development & Execution",
+    p5Cap: "Concrete Pouring & Casting",
+    p6Cap: "Site Management & Finishing",
+    e1Cap: "Machinery & Equipment Fleet",
+    e2Cap: "Excavation & Backfilling Fleet",
+    e3Cap: "Transport & Lifting Gear",
+    e4Cap: "Heavy Construction Machinery",
+    e5Cap: "Site Setup & Support Units",
+    e6Cap: "Advanced Field Equipment",
+    sec3Title: "Frequently Asked Questions",
+    f1Q: "What services does Nal Al Tsheed provide?",
+    f1A: "Nal Al Tsheed provides general architectural contracting, building construction, integrated engineering solutions, and equipment fleet management.",
+    f2Q: "Where does Nal Al Tsheed operate in Saudi Arabia?",
+    f2A: "Our services cover all regions across the Kingdom of Saudi Arabia with full field supervision and equipment support.",
+    sec4Title: "Contact Us",
+    sec4Lead: "We are pleased to connect and discuss all details for your upcoming project.",
+    addrTitle: "Address & Location",
+    addrText: "SHAC3834, 3834 Al Muhannad, 8467, Al Muhammadiyah Dist., Arar 73311, Saudi Arabia",
+    contactTitle: "Contact Details",
+    phoneHeader: "Sales & Contact Numbers:",
+    modalTitle: "Nal Al Tsheed Company Profile",
+    modalDesc: "You can view or download the comprehensive catalog of our equipment fleet and projects in PDF format.",
+    modalDownload: "Download Company Profile (PDF)",
+    modalPreview: "Preview Profile Pages:",
+    rights: "All Rights Reserved © Nal Al Tsheed Architectural Contracting Co."
   }
-  
-  function closeModal(id){
-    const modal = document.getElementById(id);
-    if(!modal) return;
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden','true');
-    if(!document.querySelector('.modal.open')) document.body.classList.remove('modal-open');
-  }
+};
 
-  openers.forEach(el=>el.addEventListener('click',()=>openModal(el.dataset.modal)));
-  document.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',()=>closeModal(el.dataset.close)));
-  document.addEventListener('keydown',e=>{
-    if(e.key==='Escape'){
-      const active=document.querySelector('.modal.open');
-      if(active) closeModal(active.id);
+// Language Switcher Function
+function changeLanguage(lang) {
+  const htmlTag = document.documentElement;
+  htmlTag.setAttribute('lang', lang);
+  htmlTag.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+  // Active Button UI
+  document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+  // Translate all elements with data-i18n
+  const elements = document.querySelectorAll('[data-i18n]');
+  elements.forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.innerHTML = translations[lang][key];
     }
   });
+}
 
-  document.querySelectorAll('#profileModal [data-modal]').forEach(el=>{
-    el.addEventListener('click',()=>{
-      const target=el.dataset.modal;
-      closeModal('profileModal');
-      setTimeout(()=>openModal(target),120);
-    });
-  });
+// Modal & Lightbox Handler
+document.addEventListener('DOMContentLoaded', () => {
 
-  // --- 2. Language Switcher (Translation Logic) ---
-  const translations = {
-    ar: {
-      brand: "شركة نال التشيد",
-      aboutNav: "عن الشركة",
-      servicesNav: "خدماتنا",
-      faqNav: "الأسئلة الشائعة",
-      contactNav: "تواصل معنا",
-      eyebrow: "NAL AL TSHEED COMPANY FOR ARCHITECTURAL CONTRACTING",
-      heroTitle: "شركة <span>نال التشيد</span> للمقاولات المعمارية",
-      heroCopy: "رائدون في تقديم الحلول المعمارية والإنشائية المتكاملة وفق أعلى معايير الجودة العالمية والدقة في التنفيذ.",
-      contactBtn: "تواصل معنا",
-      profileBtn: "الملف التعريفي",
-      sec1Title: "خدماتنا ونطاق العمل",
-      sec1Lead: "نقدم مجموعة شاملة من الخدمات الهندسية والإنشائية لتلبية تطلعات عملائنا في قطاع التشييد والمقاولات.",
-      s1Title: "المقاولات العامة والتشييد",
-      s2Title: "التصاميم والحلول المعمارية",
-      s3Title: "إدارة وتوفير المعدات",
-      sec2Title: "عن نال التشيد",
-      a1Title: "رؤيتنا ورسالتنا",
-      a1Text: "نسعى للارتقاء بقطاع المقاولات المعمارية من خلال اعتماد أحدث التقنيات الهندسية وأسطول معدات متطور لضمان تنفيذ المشاريع بأعلى جودة وفي المواعيد المحددة.",
-      a2Title: "خبراتنا الميدانية",
-      a2Text: "تمتلك الشركة سجلاً حافلاً بالنجاحات في تنفيذ وإدارة المشاريع المعمارية المتنوعة برؤية إنشائية مستدامة.",
-      sec3Title: "الأسئلة الشائعة",
-      f1Q: "ما هي الخدمات التي تقدمها شركة نال التشيد؟",
-      f1A: "تقدم شركة نال التشيد خدمات المقاولات المعمارية العامة، والتشييد البنائي، والحلول الهندسية المتكاملة، إلى جانب إدارة وتأجير معدات التشييد البنائي.",
-      f2Q: "أين تعمل شركة نال التشيد في السعودية؟",
-      f2A: "تغطي خدماتنا كافة مناطق المملكة العربية السعودية مع توفير الإشراف الميداني الكامل وأسطول المعدات اللازم للمشاريع.",
-      sec4Title: "تواصل معنا",
-      sec4Lead: "سعداء بتواصلكم ومستعدون لمناقشة كافة تفاصيل مشروعكم القادم.",
-      addrTitle: "العنوان والموقع",
-      addrText: "SHAC3834، 3834 المهند، 8467، حي المحمدية، عرعر 73311، المملكة العربية السعودية",
-      contactTitle: "بيانات الاتصال",
-      rights: "جميع الحقوق محفوظة © شركة نال التشيد للمقاولات المعمارية"
-    },
-    en: {
-      brand: "Nal Al Tsheed",
-      aboutNav: "About Us",
-      servicesNav: "Services",
-      faqNav: "FAQ",
-      contactNav: "Contact Us",
-      eyebrow: "NAL AL TSHEED COMPANY FOR ARCHITECTURAL CONTRACTING",
-      heroTitle: "<span>Nal Al Tsheed</span> Architectural Contracting",
-      heroCopy: "Leaders in providing integrated architectural and construction solutions according to the highest international quality standards.",
-      contactBtn: "Contact Us",
-      profileBtn: "Company Profile",
-      sec1Title: "Our Services & Scope",
-      sec1Lead: "We offer a comprehensive range of engineering and construction services to meet our clients' aspirations.",
-      s1Title: "General Contracting & Construction",
-      s2Title: "Architectural Designs & Solutions",
-      s3Title: "Equipment Management & Supply",
-      sec2Title: "About Nal Al Tsheed",
-      a1Title: "Our Vision & Mission",
-      a1Text: "We strive to elevate the architectural contracting sector by adopting modern engineering technologies and an advanced equipment fleet.",
-      a2Title: "Field Expertise",
-      a2Text: "The company holds a proven track record of success in executing and managing diverse architectural projects.",
-      sec3Title: "Frequently Asked Questions",
-      f1Q: "What services does Nal Al Tsheed provide?",
-      f1A: "Nal Al Tsheed provides general architectural contracting, building construction, integrated engineering solutions, and equipment fleet management.",
-      f2Q: "Where does Nal Al Tsheed operate in Saudi Arabia?",
-      f2A: "Our services cover all regions of the Kingdom of Saudi Arabia with full field supervision and necessary equipment.",
-      sec4Title: "Contact Us",
-      sec4Lead: "We are pleased to connect and ready to discuss all details of your next project.",
-      addrTitle: "Address & Location",
-      addrText: "SHAC3834, 3834 Al-Mohannad, 8467, Al-Muhammadiyah Dist., Arar 73311, KSA",
-      contactTitle: "Contact Information",
-      rights: "All Rights Reserved © Nal Al Tsheed Architectural Contracting Co."
-    }
-  };
-
-  window.changeLanguage = function(lang) {
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-      const key = element.getAttribute('data-i18n');
-      if (translations[lang] && translations[lang][key]) {
-        element.innerHTML = translations[lang][key];
+  // Open Modals via [data-modal] buttons
+  document.querySelectorAll('[data-modal]').forEach(button => {
+    button.addEventListener('click', () => {
+      const modalId = button.getAttribute('data-modal');
+      const targetModal = document.getElementById(modalId);
+      if (targetModal) {
+        targetModal.classList.add('open');
+        targetModal.setAttribute('aria-hidden', 'false');
       }
     });
+  });
 
-    document.querySelectorAll('.lang-switch button').forEach(btn => {
-      if(btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(lang)) {
-        btn.classList.add('active');
+  // Close Modals via [data-close] overlay or close buttons
+  document.querySelectorAll('[data-close]').forEach(closeElement => {
+    closeElement.addEventListener('click', () => {
+      const modalId = closeElement.getAttribute('data-close');
+      const targetModal = document.getElementById(modalId);
+      if (targetModal) {
+        targetModal.classList.remove('open');
+        targetModal.setAttribute('aria-hidden', 'true');
+      }
+    });
+  });
+
+  // Lightbox functionality for Gallery Trigger Images
+  const lightboxModal = document.getElementById('lightboxModal');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+
+  document.querySelectorAll('.lightbox-trigger').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      let imgSrc = '';
+      let title = '';
+
+      if (item.tagName.toLowerCase() === 'img') {
+        imgSrc = item.getAttribute('src');
+        title = item.getAttribute('data-title') || item.getAttribute('alt') || '';
       } else {
-        btn.classList.remove('active');
+        const img = item.querySelector('img');
+        if (img) imgSrc = img.getAttribute('src');
+        title = item.getAttribute('data-title') || (img ? img.getAttribute('alt') : '');
+      }
+
+      if (imgSrc && lightboxModal && lightboxImg) {
+        lightboxImg.src = imgSrc;
+        lightboxCaption.innerText = title;
+        lightboxModal.classList.add('open');
+        lightboxModal.setAttribute('aria-hidden', 'false');
       }
     });
-  };
+  });
 
-  // --- 3. Scroll Reveal & Navbar Animations ---
-  document.addEventListener('DOMContentLoaded', () => {
-    // إضافة كلاس الظهور الانسيابي للأقسام والكروت
-    const revealElements = document.querySelectorAll('.section, .info-card, .service-grid article, .hero-content');
-    revealElements.forEach(el => el.classList.add('reveal'));
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
+  // Close Modal on ESC key
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal.open').forEach(modal => {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
       });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // تأثير الهيدر الزجاجي عند التمرير
-    const nav = document.querySelector('.nav');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        nav?.classList.add('scrolled');
-      } else {
-        nav?.classList.remove('scrolled');
-      }
-    });
+    }
   });
-})();
+});
