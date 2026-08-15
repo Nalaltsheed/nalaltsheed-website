@@ -50,6 +50,7 @@ const translations = {
     addrText: "SHAC3834، 3834 المهند، 8467، حي المحمدية، عرعر 73311، المملكة العربية السعودية",
     contactTitle: "بيانات الاتصال",
     phoneHeader: "أرقام الاتصال والمبيعات:",
+    quoteTitle: "طلب عرض سعر سريع",
     modalTitle: "الملف التعريفي لشركة نال التشيد",
     modalDesc: "يمكنك استعراض أو تحميل الكتالوج الشامل لأسطول المعدات والمشاريع الخاص بالشركة بصيغة PDF.",
     modalDownload: "تحميل الملف التعريفي (PDF)",
@@ -106,6 +107,7 @@ const translations = {
     addrText: "SHAC3834, 3834 Al Muhannad, 8467, Al Muhammadiyah Dist., Arar 73311, Saudi Arabia",
     contactTitle: "Contact Details",
     phoneHeader: "Sales & Contact Numbers:",
+    quoteTitle: "Quick Quote Request",
     modalTitle: "Nal Al Tsheed Company Profile",
     modalDesc: "You can view or download the comprehensive catalog of our equipment fleet and projects in PDF format.",
     modalDownload: "Download Company Profile (PDF)",
@@ -200,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
 /* =========================================
    تشغيل تأثيرات الحركة عند التمرير (Scroll Animations)
 ========================================= */
