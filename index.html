@@ -3,13 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>شركة نال التشييد للتجارة والمقاولات | Nal Al Tsheed</title>
+  <title data-ar="شركة نال التشييد للتجارة والمقاولات" data-en="Nal Al Tsheed Contracting Co.">شركة نال التشييد للتجارة والمقاولات</title>
   <meta name="description" content="شركة نال التشييد للتجارة والمقاولات - تنفيذ كافة أعمال المقاولات العامة والإنشائية، المشاريع الحكومية، والحلول الهندسية بالمملكة العربية السعودية.">
 
-  <!-- Favicon Links -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.webp">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon.webp">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -29,7 +26,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-family: 'Cairo', sans-serif; }
-    body { background-color: var(--white); color: var(--dark); line-height: 1.7; }
+    body { background-color: var(--white); color: var(--dark); line-height: 1.7; transition: var(--transition); }
     a { text-decoration: none; color: inherit; }
 
     /* Header & Nav */
@@ -57,6 +54,7 @@
     .btn:hover { background: var(--gold-hover); transform: translateY(-2px); }
     .btn.secondary { background: transparent; border: 2px solid var(--gold); color: var(--white); margin-right: 12px; }
     .btn.secondary:hover { background: var(--gold); color: var(--navy); }
+    html[dir="ltr"] .btn.secondary { margin-right: 0; margin-left: 12px; }
     .btn-full { width: 100%; padding: 15px; font-size: 1.1rem; }
 
     /* Sections */
@@ -79,11 +77,11 @@
     .gov-specs li { margin-bottom: 6px; color: var(--dark); }
     .gov-specs li strong { color: var(--navy); }
 
-    /* Gallery */
+    /* Gallery (Fixed) */
     .gallery-item { position: relative; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); cursor: pointer; height: 220px; }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); pointer-events: none; }
     .gallery-item:hover img { transform: scale(1.08); }
-    .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(14, 32, 56, 0.9)); color: var(--white); padding: 15px; font-weight: 600; font-size: 0.95rem; }
+    .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(14, 32, 56, 0.9)); color: var(--white); padding: 15px; font-weight: 600; font-size: 0.95rem; pointer-events: none; }
 
     /* Estimator Form */
     .estimator-card { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: var(--shadow); border: 1px solid var(--gray); max-width: 900px; margin: 0 auto; }
@@ -94,7 +92,9 @@
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15); }
 
     /* WhatsApp & Modals */
-    .whatsapp-float { position: fixed; bottom: 25px; left: 25px; background-color: #25d366; color: #fff; border-radius: 50px; padding: 12px 18px; display: flex; align-items: center; gap: 10px; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); z-index: 999; transition: var(--transition); text-decoration: none; }
+    html[dir="rtl"] .whatsapp-float { left: 25px; right: auto; }
+    html[dir="ltr"] .whatsapp-float { right: 25px; left: auto; }
+    .whatsapp-float { position: fixed; bottom: 25px; background-color: #25d366; color: #fff; border-radius: 50px; padding: 12px 18px; display: flex; align-items: center; gap: 10px; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); z-index: 999; transition: var(--transition); text-decoration: none; }
     .whatsapp-float:hover { transform: translateY(-4px) scale(1.03); }
     .modal { display: none; position: fixed; inset: 0; z-index: 2000; align-items: center; justify-content: center; }
     .modal.active { display: flex; }
@@ -102,17 +102,17 @@
     .modal-content, .lightbox-box { position: relative; background: var(--white); padding: 30px; border-radius: 12px; max-width: 800px; width: 90%; max-height: 85vh; overflow-y: auto; z-index: 2001; }
     .lightbox-box { background: transparent; padding: 0; text-align: center; max-width: 90vw; }
     .lightbox-box img { max-width: 100%; max-height: 75vh; border-radius: 8px; }
-    .lightbox-caption { color: var(--white); margin-top: 10px; font-weight: 700; }
-    .modal-close { position: absolute; top: 10px; right: 15px; background: transparent; border: none; font-size: 2rem; color: var(--white); cursor: pointer; }
+    .lightbox-caption { color: var(--white); margin-top: 10px; font-weight: 700; font-size: 1.2rem;}
+    html[dir="rtl"] .modal-close { left: 15px; right: auto; }
+    html[dir="ltr"] .modal-close { right: 15px; left: auto; }
+    .modal-close { position: absolute; top: 10px; background: transparent; border: none; font-size: 2rem; color: var(--white); cursor: pointer; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
 
     footer { background: var(--navy); color: var(--gray); text-align: center; padding: 40px 5%; border-top: 3px solid var(--gold); }
-    footer img { height: 50px; margin-bottom: 15px; }
-
+    
     @media (max-width: 768px) {
       .hero { flex-direction: column; text-align: center; padding-top: 40px; }
       .nav { flex-direction: column; gap: 15px; }
       .form-row { flex-direction: column; gap: 0; }
-      .wa-tooltip { display: none; }
     }
   </style>
 </head>
@@ -121,21 +121,19 @@
   <!-- Navigation -->
   <header class="nav" id="main-nav">
     <div class="brand">
-      <img src="logo.webp" alt="شعار شركة نال التشييد">
-      <span>شركة نال التشييد</span>
+      <span data-ar="شركة نال التشييد" data-en="Nal Al Tsheed Co.">شركة نال التشييد</span>
     </div>
     <nav>
-      <a href="#about">عن الشركة</a>
-      <a href="#services">خدماتنا</a>
-      <a href="#gov-projects">المشاريع</a>
-      <a href="#gallery">معرض الأعمال</a>
-      <a href="#equipment">المعدات</a>
-      <a href="#estimator">التسعير (BOQ)</a>
-      <a href="#contact">تواصل معنا</a>
+      <a href="#about" data-ar="عن الشركة" data-en="About Us">عن الشركة</a>
+      <a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
+      <a href="#gov-projects" data-ar="المشاريع" data-en="Projects">المشاريع</a>
+      <a href="#equipment" data-ar="المعدات" data-en="Equipment">المعدات</a>
+      <a href="#estimator" data-ar="التسعير (BOQ)" data-en="BOQ Pricing">التسعير (BOQ)</a>
+      <a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
     </nav>
     <div class="lang-switch">
-      <button id="btn-ar" class="active">AR</button>
-      <button id="btn-en">EN</button>
+      <button id="btn-ar" class="active" onclick="setLanguage('ar')">AR</button>
+      <button id="btn-en" onclick="setLanguage('en')">EN</button>
     </div>
   </header>
 
@@ -143,199 +141,147 @@
   <section class="hero fade-in">
     <div class="hero-content">
       <span class="eyebrow">NAL AL TSHEED CONTRACTING CO.</span>
-      <h1>شركة <span>نال التشييد</span> للتجارة والمقاولات</h1>
-      <p class="hero-copy">مقاولات عامة، حلول إنشائية متكاملة، توريد وتركيب، وإدارة المشاريع الحكومية والبنية التحتية بأعلى معايير الجودة والاعتمادية.</p>
-      <a href="#estimator" class="btn">احسب تكلفة مشروعك</a>
-      <button class="btn secondary" data-modal="profileModal">الملف التعريفي</button>
-    </div>
-    <div class="hero-logo-wrap">
-      <img src="logo.webp" alt="شعار نال التشييد">
+      <h1 data-ar="شركة <span>نال التشييد</span> للتجارة والمقاولات" data-en="<span>Nal Al Tsheed</span> Contracting & Trading Co.">شركة <span>نال التشييد</span> للتجارة والمقاولات</h1>
+      <p class="hero-copy" data-ar="مقاولات عامة، حلول إنشائية متكاملة، توريد وتركيب، وإدارة المشاريع الحكومية والبنية التحتية بأعلى معايير الجودة." data-en="General contracting, integrated construction solutions, supply & installation, and government project management with highest quality standards.">مقاولات عامة، حلول إنشائية متكاملة، توريد وتركيب، وإدارة المشاريع الحكومية والبنية التحتية بأعلى معايير الجودة.</p>
+      <a href="#estimator" class="btn" data-ar="احسب تكلفة مشروعك" data-en="Calculate Project Cost">احسب تكلفة مشروعك</a>
+      <button class="btn secondary" data-modal="profileModal" data-ar="الملف التعريفي" data-en="Company Profile">الملف التعريفي</button>
     </div>
   </section>
 
   <!-- Services -->
   <section id="services" class="section light">
     <div class="section-head fade-in">
-      <span>01</span><h2>نطاق الخدمات</h2>
+      <span>01</span><h2 data-ar="نطاق الخدمات" data-en="Our Services">نطاق الخدمات</h2>
     </div>
     <div class="grid">
-      <article class="card fade-in"><span class="card-num">01</span><h3>المقاولات والتشييد المعماري</h3></article>
-      <article class="card fade-in"><span class="card-num">02</span><h3>أعمال الهدم والإزالة والإخلاء</h3></article>
-      <article class="card fade-in"><span class="card-num">03</span><h3>الكهروميكانيك (أنظمة الحريق والكهرباء)</h3></article>
-      <article class="card fade-in"><span class="card-num">04</span><h3>تأجير وإدارة المعدات الثقيلة</h3></article>
+      <article class="card fade-in"><span class="card-num">01</span><h3 data-ar="المقاولات والتشييد المعماري" data-en="Architectural Construction">المقاولات والتشييد المعماري</h3></article>
+      <article class="card fade-in"><span class="card-num">02</span><h3 data-ar="أعمال الهدم والإزالة والإخلاء" data-en="Demolition & Site Clearance">أعمال الهدم والإزالة والإخلاء</h3></article>
+      <article class="card fade-in"><span class="card-num">03</span><h3 data-ar="الكهروميكانيك (أنظمة الحريق والكهرباء)" data-en="MEP (Fire & Electrical Systems)">الكهروميكانيك (أنظمة الحريق والكهرباء)</h3></article>
+      <article class="card fade-in"><span class="card-num">04</span><h3 data-ar="تأجير وإدارة المعدات الثقيلة" data-en="Heavy Equipment Rental">تأجير وإدارة المعدات الثقيلة</h3></article>
     </div>
   </section>
 
-  <!-- Government & Infrastructure Projects Section (Updated with your custom projects) -->
+  <!-- Projects Section -->
   <section id="gov-projects" class="section">
     <div class="section-head fade-in">
-      <span>02</span><h2>سابقة الأعمال والمشاريع الاستراتيجية</h2>
+      <span>02</span><h2 data-ar="سابقة الأعمال والمشاريع الاستراتيجية" data-en="Previous Work & Strategic Projects">سابقة الأعمال والمشاريع الاستراتيجية</h2>
     </div>
-    <p class="lead fade-in">سجل حافل بتنفيذ مشاريع البنية التحتية، الإزالات، والترميم مع كبرى القطاعات العسكرية والحكومية.</p>
     
     <div class="grid">
-      <!-- مجمع الملك فهد الطبي -->
       <div class="card fade-in" style="border-top: 4px solid var(--gold);">
-        <div class="gov-badge">القطاع الطبي / العسكري</div>
-        <h3>مستشفى مجمع الملك فهد الطبي</h3>
-        <p>إعداد الجداول الزمنية (Gantt chart) وإدارة مشروع الهدم والإزالة لعدد 49 مبنى خرساني مسلح (دورين) بمساحات تصل إلى 500 م² للمبنى.</p>
+        <div class="gov-badge" data-ar="جامعة الحدود الشمالية" data-en="Northern Borders University">جامعة الحدود الشمالية</div>
+        <h3 data-ar="مشاريع الإنشاء والترميم" data-en="Construction & Restoration">مشاريع الإنشاء والترميم</h3>
         <ul class="gov-specs">
-          <li><strong>المالك:</strong> مستشفى مجمع الملك فهد الطبي بالظهران</li>
-          <li><strong>النطاق:</strong> هدم وإزالة (24,500 م² إجمالي)</li>
-          <li><strong>الموقع:</strong> الظهران</li>
+          <li data-ar="إنشاء مبني القبب الزجاجية" data-en="Construction of Glass Domes Building">إنشاء مبني القبب الزجاجية</li>
+          <li data-ar="إنشاء نادي الفروسية (مرحلة أولى)" data-en="Equestrian Club Construction (Phase 1)">إنشاء نادي الفروسية (مرحلة أولى)</li>
+          <li data-ar="ترميم معمل الأحياء الجزيئية" data-en="Restoration of Molecular Biology Lab">ترميم معمل الأحياء الجزيئية</li>
         </ul>
       </div>
 
-      <!-- الدفاع المدني -->
       <div class="card fade-in" style="border-top: 4px solid var(--gold);">
-        <div class="gov-badge">المباني الحكومية والأمنية</div>
-        <h3>مباني الدفاع المدني</h3>
-        <p>إدارة وتنفيذ أعمال الترميم الشاملة، معالجة التشققات الإنشائية، وإعادة التأهيل لمباني الدفاع المدني لضمان الجاهزية التشغيلية القصوى.</p>
+        <div class="gov-badge" data-ar="قطاع الطاقة" data-en="Energy Sector">قطاع الطاقة</div>
+        <h3 data-ar="محطات الكهرباء التحويلية" data-en="Power Substations">محطات الكهرباء التحويلية</h3>
         <ul class="gov-specs">
-          <li><strong>الجهة:</strong> الدفاع المدني</li>
-          <li><strong>النطاق:</strong> ترميم وإصلاحات إنشائية</li>
-          <li><strong>الموقع:</strong> رفحاء</li>
+          <li data-ar="الأعمال المدنية لمحطة العويقيلة (06 عقود)" data-en="Civil works for Uwayqilah Substation (6 contracts)">الأعمال المدنية لمحطة العويقيلة (06 عقود)</li>
+          <li data-ar="الأعمال المدنية لمحطة الصداوي (15 عقود)" data-en="Civil works for As-Sadawi Substation (15 contracts)">الأعمال المدنية لمحطة الصداوي (15 عقود)</li>
+          <li data-ar="الأعمال المدنية لمحطة الخشيبي بالقصيم (03 عقود)" data-en="Civil works for Al Khushaybi Substation (3 contracts)">الأعمال المدنية لمحطة الخشيبي بالقصيم (03 عقود)</li>
         </ul>
       </div>
 
-      <!-- مدارس الجوف -->
       <div class="card fade-in" style="border-top: 4px solid var(--gold);">
-        <div class="gov-badge">قطاع التعليم</div>
-        <h3>صيانة المرافق التعليمية</h3>
-        <p>تنفيذ أعمال الصيانة العاجلة والترميمات الميدانية لعدد 6 مدارس تعليمية بمنطقة الجوف وفق المعايير الهندسية وفي أوقات قياسية.</p>
+        <div class="gov-badge" data-ar="القطاعات الحكومية" data-en="Government Sectors">القطاعات الحكومية</div>
+        <h3 data-ar="أعمال الصيانة والمعالجات" data-en="Maintenance & Treatments">أعمال الصيانة والمعالجات</h3>
         <ul class="gov-specs">
-          <li><strong>الجهة:</strong> وزارة التعليم</li>
-          <li><strong>النطاق:</strong> صيانة طارئة وعاجلة</li>
-          <li><strong>الموقع:</strong> منطقة الجوف</li>
+          <li data-ar="إصلاح وصيانة مباني الدفاع المدني بالحدود الشمالية" data-en="Repair of Civil Defense buildings (Northern Borders)">إصلاح وصيانة مباني الدفاع المدني بالحدود الشمالية</li>
+          <li data-ar="معالجة أسطح مباني إدارة الجوازات" data-en="Roof treatment for Passports Directorate buildings">معالجة أسطح مباني إدارة الجوازات</li>
+          <li data-ar="صيانة طارئة لـ 6 مدارس بمنطقة الجوف" data-en="Emergency maintenance for 6 schools in Al-Jouf">صيانة طارئة لـ 6 مدارس بمنطقة الجوف</li>
         </ul>
       </div>
 
-      <!-- الوحدات العاجلة -->
       <div class="card fade-in" style="border-top: 4px solid var(--gold);">
-        <div class="gov-badge">الإنشاءات المتخصصة</div>
-        <h3>الوحدات الإنشائية العاجلة</h3>
-        <p>تنفيذ وتجهيز الوحدات الإنشائية العاجلة للمقرات الأمنية (السجون) وفق أحدث مواصفات الأمان والجودة العالية.</p>
+        <div class="gov-badge" data-ar="القطاع الطبي" data-en="Medical Sector">القطاع الطبي</div>
+        <h3 data-ar="مجمع الملك فهد الطبي بالظهران" data-en="King Fahd Medical Complex (Dhahran)">مجمع الملك فهد الطبي بالظهران</h3>
         <ul class="gov-specs">
-          <li><strong>القطاع:</strong> مقاولات إنشائية متخصصة</li>
-          <li><strong>النطاق:</strong> بناء وتجهيز متكامل</li>
-          <li><strong>الموقع:</strong> رفحاء</li>
+          <li data-ar="إدارة وهدم 49 مبنى خرساني (إجمالي 24,500 م²)" data-en="Demolition of 49 concrete buildings (Total 24,500 m²)">إدارة وهدم 49 مبنى خرساني (إجمالي 24,500 م²)</li>
+          <li data-ar="إعداد الجداول الزمنية (Gantt chart) للمشروع" data-en="Preparation of project Gantt charts">إعداد الجداول الزمنية (Gantt chart) للمشروع</li>
         </ul>
-      </div>
-
-      <!-- الكهروميكانيك -->
-      <div class="card fade-in" style="border-top: 4px solid var(--gold);">
-        <div class="gov-badge">الأنظمة والكهروميكانيك</div>
-        <h3>تمديدات الكهرباء وأنظمة الإطفاء</h3>
-        <p>تنفيذ أعمال التمديدات الكهربائية الداخلية، وحدات UPS، كابلات الجهد المنخفض، لوحات إنذار الحريق، وأنظمة الإطفاء بغاز CO2.</p>
-        <ul class="gov-specs">
-          <li><strong>النطاق:</strong> توريد وتركيب الأنظمة</li>
-          <li><strong>التصنيف:</strong> إلكتروميكانيك (MEP)</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Gallery Section -->
-  <section id="gallery" class="section light">
-    <div class="section-head fade-in">
-      <span>03</span><h2>معرض الصور والأعمال</h2>
-    </div>
-    <div class="grid">
-      <div class="gallery-item lightbox-trigger fade-in" data-title="أعمال الانشاءات والتشييد">
-        <img src="project-work-1-1.webp" alt="مشاريع" loading="lazy">
-        <div class="gallery-caption">أعمال الانشاءات والتشييد</div>
-      </div>
-      <div class="gallery-item lightbox-trigger fade-in" data-title="أعمال الهدم والإزالة">
-        <img src="project-work-2-1.webp" alt="إزالة" loading="lazy">
-        <div class="gallery-caption">مشاريع الهدم والإزالة</div>
-      </div>
-      <div class="gallery-item lightbox-trigger fade-in" data-title="أعمال التجهيزات المعمارية">
-        <img src="project-work-3-1.webp" alt="تجهيزات" loading="lazy">
-        <div class="gallery-caption">أعمال التجهيزات والتشطيبات</div>
-      </div>
-      <div class="gallery-item lightbox-trigger fade-in" data-title="أعمال الصب والخرسانة">
-        <img src="project-work-5-1.webp" alt="خرسانة" loading="lazy">
-        <div class="gallery-caption">أعمال الصب والخرسانة المسلحة</div>
       </div>
     </div>
   </section>
 
   <!-- Equipment Fleet Section -->
-  <section id="equipment" class="section">
+  <section id="equipment" class="section light">
     <div class="section-head fade-in">
-      <span>04</span><h2>أسطول المعدات</h2>
+      <span>03</span><h2 data-ar="أسطول المعدات والآليات" data-en="Equipment Fleet">أسطول المعدات والآليات</h2>
     </div>
     <div class="grid">
-      <div class="gallery-item lightbox-trigger fade-in" data-title="رافعة شوكية Forklift 3 Ton">
-        <img src="04_Forklift_3_ton.webp" alt="رافعة" loading="lazy"><div class="gallery-caption">رافعة شوكية (3 Ton)</div>
+      <!-- Equipment Cards via Lightbox structure -->
+      <div class="gallery-item lightbox-trigger fade-in" data-title-ar="سيارات بيك أب إدارية وحافلات (العدد: 17)" data-title-en="Pickup & Admin Vehicles (Qty: 17)">
+        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=500&q=80" alt="Pickups">
+        <div class="gallery-caption" data-ar="سيارات بيك أب إدارية وحافلات (العدد: 17)" data-en="Pickup & Admin Vehicles (Qty: 17)">سيارات بيك أب إدارية وحافلات (العدد: 17)</div>
       </div>
-      <div class="gallery-item lightbox-trigger fade-in" data-title="رافعة هيدروليكية Crane 50 Ton">
-        <img src="05_Crane_50_ton.webp" alt="كرين" loading="lazy"><div class="gallery-caption">رافعة هيدروليكية (50 Ton)</div>
+      
+      <div class="gallery-item lightbox-trigger fade-in" data-title-ar="بوكلين / حفارات (العدد: 6)" data-title-en="Excavators (Qty: 6)">
+        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=500&q=80" alt="Excavator">
+        <div class="gallery-caption" data-ar="بوكلين / حفارات (العدد: 6)" data-en="Excavators (Qty: 6)">بوكلين / حفارات (العدد: 6)</div>
       </div>
-      <div class="gallery-item lightbox-trigger fade-in" data-title="برج إضاءة متحرك Tower Light">
-        <img src="06_Tower_Light.webp" alt="برج إضاءة" loading="lazy"><div class="gallery-caption">برج إضاءة متحرك</div>
+
+      <div class="gallery-item lightbox-trigger fade-in" data-title-ar="شيول وبلدوزرات (العدد: 10)" data-title-en="Wheel Loaders & Dozers (Qty: 10)">
+        <img src="https://images.unsplash.com/photo-1581404179346-6085a81615d8?auto=format&fit=crop&w=500&q=80" alt="Loader">
+        <div class="gallery-caption" data-ar="شيول وبلدوزرات (العدد: 10)" data-en="Wheel Loaders & Dozers (Qty: 10)">شيول وبلدوزرات (العدد: 10)</div>
       </div>
-      <div class="gallery-item lightbox-trigger fade-in" data-title="مولد كهرباء Generator 720 KW">
-        <img src="07_Generator_720_KW.webp" alt="مولد" loading="lazy"><div class="gallery-caption">مولد كهرباء (720 KW)</div>
+
+      <div class="gallery-item lightbox-trigger fade-in" data-title-ar="قلابات وشاحنات نقل (العدد: 5)" data-title-en="Dump Trucks (Qty: 5)">
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=500&q=80" alt="Dump Trucks">
+        <div class="gallery-caption" data-ar="قلابات وشاحنات نقل (العدد: 5)" data-en="Dump Trucks (Qty: 5)">قلابات وشاحنات نقل (العدد: 5)</div>
+      </div>
+
+      <div class="gallery-item lightbox-trigger fade-in" data-title-ar="كسارات متحركة وثابتة (العدد: 5)" data-title-en="Mobile & Stationary Crushers (Qty: 5)">
+        <img src="https://images.unsplash.com/photo-1584988770733-1ec0e76878b2?auto=format&fit=crop&w=500&q=80" alt="Crusher">
+        <div class="gallery-caption" data-ar="كسارات متحركة وثابتة (العدد: 5)" data-en="Crushers (Qty: 5)">كسارات متحركة وثابتة (العدد: 5)</div>
+      </div>
+
+      <div class="gallery-item lightbox-trigger fade-in" data-title-ar="جريدر ورصاصات ترابية (العدد: 4)" data-title-en="Graders & Rollers (Qty: 4)">
+        <img src="https://images.unsplash.com/photo-1584880590403-d64e32236d6a?auto=format&fit=crop&w=500&q=80" alt="Grader">
+        <div class="gallery-caption" data-ar="جريدر ورصاصات ترابية (العدد: 4)" data-en="Graders & Rollers (Qty: 4)">جريدر ورصاصات ترابية (العدد: 4)</div>
+      </div>
+      
+      <div class="gallery-item lightbox-trigger fade-in" data-title-ar="معدات مفردة (رافعة، كرين 50 طن، حفار أوتاد)" data-title-en="Single Eq. (Forklift, 50T Crane, Piling Rig)">
+        <img src="https://images.unsplash.com/photo-1621252179027-94459d278660?auto=format&fit=crop&w=500&q=80" alt="Crane">
+        <div class="gallery-caption" data-ar="معدات مفردة (كرين، رافعة، حفار أوتاد)" data-en="Single Eq. (Crane, Forklift, Piling Rig)">معدات مفردة (كرين، رافعة، حفار أوتاد)</div>
+      </div>
+
+      <div class="gallery-item lightbox-trigger fade-in" data-title-ar="معدات الدعم (مولدات، أبراج إضاءة، مكائن لحام)" data-title-en="Support Eq. (Generators, Light Towers)">
+        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=500&q=80" alt="Generators">
+        <div class="gallery-caption" data-ar="معدات الدعم والطاقة (العدد: 6)" data-en="Support Eq. & Energy (Qty: 6)">معدات الدعم والطاقة (العدد: 6)</div>
       </div>
     </div>
   </section>
 
   <!-- Interactive Cost Estimator & BOQ -->
-  <section id="estimator" class="section light">
+  <section id="estimator" class="section">
     <div class="section-head fade-in">
-      <span>05</span><h2>حاسبة التسعير وجداول الكميات (BOQ)</h2>
+      <span>04</span><h2 data-ar="حاسبة التسعير وجداول الكميات" data-en="Estimation & BOQ">حاسبة التسعير وجداول الكميات</h2>
     </div>
     <div class="estimator-card fade-in">
       <form id="estimatorForm">
         <div class="form-row">
           <div class="form-group">
-            <label>نوع الخدمة المطلوبة *</label>
+            <label data-ar="نوع الخدمة المطلوبة *" data-en="Required Service *">نوع الخدمة المطلوبة *</label>
             <select required>
-              <option value="" disabled selected>اختر الخدمة...</option>
-              <option>أعمال توريد وتركيب (مواد + مصنعية)</option>
-              <option>أعمال مصنعية فقط</option>
-              <option>أعمال هدم وإزالة وإخلاء</option>
-              <option>تسعير جدول كميات ومقايسة (BOQ)</option>
-              <option>استئجار معدات وآليات</option>
+              <option value="" disabled selected data-ar="اختر الخدمة..." data-en="Select Service...">اختر الخدمة...</option>
+              <option data-ar="أعمال توريد وتركيب (مواد + مصنعية)" data-en="Supply & Installation">أعمال توريد وتركيب (مواد + مصنعية)</option>
+              <option data-ar="أعمال مصنعية فقط" data-en="Labor Work Only">أعمال مصنعية فقط</option>
+              <option data-ar="أعمال هدم وإزالة وإخلاء" data-en="Demolition & Clearance">أعمال هدم وإزالة وإخلاء</option>
             </select>
           </div>
           <div class="form-group">
-            <label>موقع المشروع / المدينة *</label>
-            <input type="text" placeholder="مثال: عرعر، الظهران، رفحاء..." required>
+            <label data-ar="موقع المشروع / المدينة *" data-en="Project Location / City *">موقع المشروع / المدينة *</label>
+            <input type="text" placeholder="..." required>
           </div>
         </div>
-        <div class="form-group">
-          <label>تفاصيل المشروع أو بنود الكميات (الخرسانة، السباكة، الحريق..)</label>
-          <textarea rows="4" placeholder="اكتب تفاصيل المساحة (مثال: 49 مبنى، 500م²) أو مواصفات المواد..."></textarea>
-        </div>
-        <button type="button" class="btn btn-full">إنشاء طلب التسعير المباشر عبر الواتساب 📋💬</button>
+        <button type="button" class="btn btn-full" data-ar="إنشاء طلب التسعير 📋" data-en="Generate Quotation Request 📋">إنشاء طلب التسعير 📋</button>
       </form>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="section-head fade-in">
-      <span>06</span><h2>تواصل معنا</h2>
-    </div>
-    <div class="grid">
-      <div class="card fade-in">
-        <h3>العنوان والموقع</h3>
-        <p>3834 المهند، حي المحمدية، عرعر 73311، المملكة العربية السعودية</p>
-        <div style="margin-top: 15px; border-radius: 8px; overflow: hidden; height: 180px;">
-          <iframe src="https://maps.google.com/maps?q=3834%20المهند،%20حي%20المحمدية،%20عرعر%2073311&hl=ar&z=16&output=embed" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
-        </div>
-      </div>
-      <div class="card fade-in">
-        <h3>بيانات الاتصال</h3>
-        <p>البريد: <a href="mailto:info@nalaltsheed.com">info@nalaltsheed.com</a></p>
-        <p style="margin-top: 15px;"><strong>أرقام المبيعات:</strong></p>
-        <ul style="list-style: none; margin-top: 10px;">
-          <li>📞 <a href="tel:0552880208">0552880208</a></li>
-          <li>📞 <a href="tel:0549100006">0549100006</a></li>
-        </ul>
-      </div>
     </div>
   </section>
 
@@ -352,42 +298,75 @@
   <div id="profileModal" class="modal">
     <div class="modal-overlay" data-close="profileModal"></div>
     <div class="modal-content">
-      <h3 style="color: var(--navy);">الملف التعريفي للشركة</h3>
-      <a href="profile.pdf" target="_blank" class="btn" style="margin: 20px 0;">تحميل الملف التعريفي (PDF)</a>
+      <h3 style="color: var(--navy);" data-ar="الملف التعريفي للشركة" data-en="Company Profile">الملف التعريفي للشركة</h3>
+      <a href="profile.pdf" target="_blank" class="btn" style="margin: 20px 0;" data-ar="تحميل الملف التعريفي (PDF)" data-en="Download Profile (PDF)">تحميل الملف التعريفي (PDF)</a>
       <button class="modal-close" data-close="profileModal">&times;</button>
     </div>
   </div>
 
-  <a href="https://wa.me/966552880208" class="whatsapp-float" target="_blank">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="#ffffff"><path d="M12.031 0c-6.627 0-12 5.373-12 12 0 2.159.57 4.26 1.657 6.105l-1.688 6.166 6.307-1.654c1.776.97 3.784 1.483 5.724 1.483 6.627 0 12-5.373 12-12s-5.373-12-12-12zm.005 22c-1.812 0-3.583-.483-5.132-1.398l-.368-.218-3.818 1.001 1.019-3.723-.239-.382c-.999-1.592-1.528-3.435-1.528-5.3 0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
-  </a>
-
   <footer>
-    <p>جميع الحقوق محفوظة © شركة نال التشييد للتجارة والمقاولات</p>
+    <p data-ar="جميع الحقوق محفوظة © شركة نال التشييد للتجارة والمقاولات" data-en="All Rights Reserved © Nal Al Tsheed Contracting Co.">جميع الحقوق محفوظة © شركة نال التشييد للتجارة والمقاولات</p>
   </footer>
 
   <script>
+    // 1. Language Translation Logic
+    function setLanguage(lang) {
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.lang = lang;
+      
+      document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      
+      // Update Texts
+      document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+        if(el.tagName.toLowerCase() === 'input' || el.tagName.toLowerCase() === 'textarea') {
+            el.placeholder = el.getAttribute(`data-${lang}`);
+        } else {
+            el.innerHTML = el.getAttribute(`data-${lang}`);
+        }
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
-        // Modals
+        // 2. Modals Control
         document.querySelectorAll('[data-modal]').forEach(t => t.addEventListener('click', (e) => {
-            e.preventDefault(); document.getElementById(t.dataset.modal).classList.add('active');
+            e.preventDefault(); 
+            document.getElementById(t.dataset.modal).classList.add('active');
         }));
+        
         document.querySelectorAll('[data-close]').forEach(c => c.addEventListener('click', () => {
             document.getElementById(c.dataset.close).classList.remove('active');
         }));
 
-        // Lightbox
-        document.querySelectorAll('.lightbox-trigger').forEach(img => img.addEventListener('click', () => {
-            document.getElementById('lightboxImg').src = img.src;
-            document.getElementById('lightboxCaption').textContent = img.dataset.title || '';
-            document.getElementById('lightboxModal').classList.add('active');
-        }));
+        // 3. Fixed Lightbox Logic
+        document.querySelectorAll('.lightbox-trigger').forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img'); // حل مشكلة التوقف: استهداف الصورة داخل الحاوية وليس الحاوية نفسها
+                const lang = document.documentElement.lang;
+                const title = item.getAttribute(`data-title-${lang}`) || '';
+                
+                document.getElementById('lightboxImg').src = img.src;
+                document.getElementById('lightboxCaption').textContent = title;
+                document.getElementById('lightboxModal').classList.add('active');
+            });
+        });
 
-        // Scroll Animation
+        // 4. Scroll Animation
         const obs = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }});
+            entries.forEach(e => { 
+                if (e.isIntersecting) { 
+                    e.target.style.opacity = '1'; 
+                    e.target.style.transform = 'translateY(0)'; 
+                }
+            });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in').forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'all 0.6s ease-out'; obs.observe(el); });
+
+        document.querySelectorAll('.fade-in').forEach(el => { 
+            el.style.opacity = '0'; 
+            el.style.transform = 'translateY(20px)'; 
+            el.style.transition = 'all 0.6s ease-out'; 
+            obs.observe(el); 
+        });
     });
   </script>
 </body>
