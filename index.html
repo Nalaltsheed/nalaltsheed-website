@@ -42,19 +42,6 @@
     }
   }
   </script>
-  
-  <style>
-    /* أنماط إضافية لجدول المعدات وجدول الكميات لضمان المظهر الاحترافي */
-    .data-table-container { overflow-x: auto; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-top: 30px; border: 1px solid #e2e8f0; }
-    .data-table { width: 100%; border-collapse: collapse; text-align: right; min-width: 700px; }
-    html[dir="ltr"] .data-table { text-align: left; }
-    .data-table th { background-color: var(--navy, #0e2038); color: #fff; padding: 15px; font-weight: 700; font-size: 0.95rem; }
-    .data-table td { padding: 12px 15px; border-bottom: 1px solid #e2e8f0; font-size: 0.9rem; font-weight: 600; color: #334155; }
-    .data-table tr:hover { background-color: #f8fafc; }
-    .data-table input { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; transition: all 0.3s ease; }
-    .data-table input:focus { border-color: var(--gold, #c5a059); outline: none; box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2); }
-    .total-row { background-color: #f8fafc; font-weight: 800; font-size: 1.1rem; color: var(--navy, #0e2038); }
-  </style>
 </head>
 <body>
 
@@ -70,7 +57,6 @@
       <a href="#gov-projects" data-i18n="govProjectsNav">سابقة الأعمال</a>
       <a href="#projects" data-i18n="projectsNav">مشاريعنا</a>
       <a href="#equipment" data-i18n="equipmentNav">المعدات</a>
-      <a href="#boq" data-i18n="boqNav">جدول الكميات</a>
       <a href="#estimator" data-i18n="estimatorNav">حاسبة التسعير</a>
       <a href="#contact" data-i18n="contactNav">تواصل معنا</a>
     </nav>
@@ -235,7 +221,6 @@
     </div>
     <p class="lead fade-in" data-i18n="secEquipLead">تتجهز الشركة بأسطول متكامل من الآليات والمعدات الثقيلة لتنفيذ أضخم المشاريع الإنشائية بكفاءة عالية.</p>
     
-    <!-- صور المعدات (التي كانت موجودة مسبقاً) -->
     <div class="gallery-grid">
       <div class="gallery-item lightbox-trigger fade-in" data-title="حافلة نقل عمالة (سعة كبيرة)">
         <img src="01_Large_Bus.webp" alt="حافلة نقل عمالة" loading="lazy">
@@ -271,141 +256,18 @@
       </div>
     </div>
 
-    <!-- قائمة المعدات التفصيلية الكاملة -->
-    <div class="data-table-container fade-in">
-      <h3 style="margin-bottom: 20px; color: var(--navy); font-size: 1.5rem;" data-i18n="eqListTitle">القائمة التفصيلية لأسطول المعدات والآليات</h3>
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th data-i18n="eqTh1">م</th>
-            <th data-i18n="eqTh2">المعدة / الآلية</th>
-            <th data-i18n="eqTh3">الشركة المصنعة (الماركة)</th>
-            <th data-i18n="eqTh4">رقم اللوحة / التسلسل</th>
-            <th data-i18n="eqTh5">الموديل / العدد</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>هايلكس دبل</td><td>تويوتا</td><td>ا ي م 2430</td><td>2015</td></tr>
-          <tr><td>2</td><td>هايلكس دبل</td><td>تويوتا</td><td>ا هـ د 9828</td><td>2014</td></tr>
-          <tr><td>3</td><td>هايلكس دبل</td><td>تويوتا</td><td>ا هـ د 5383</td><td>2013</td></tr>
-          <tr><td>4</td><td>بكب غمارتين دبل</td><td>ايسوزو</td><td>أ ح ص 1338</td><td>2008</td></tr>
-          <tr><td>5</td><td>جيب شاص بكب</td><td>تويوتا</td><td>ب ط أ 6000</td><td>2012</td></tr>
-          <tr><td>6</td><td>بكب غماره دبل</td><td>تويوتا</td><td>ا ه ب 5256</td><td>2013</td></tr>
-          <tr><td>7</td><td>بكب غماره دبل</td><td>تويوتا</td><td>أ ه ب 9816</td><td>2014</td></tr>
-          <tr><td>8</td><td>غمارتين دبل</td><td>ايسوزو</td><td>ب ر س 4013</td><td>2019</td></tr>
-          <tr><td>9</td><td>بكب غمارتين</td><td>ايسوزو</td><td>أ م ب 5299</td><td>2012</td></tr>
-          <tr><td>10</td><td>بكب غمارتين</td><td>نيسان</td><td>أ ع د 2703</td><td>2010</td></tr>
-          <tr><td>11</td><td>بكب غمارتين</td><td>نيسان</td><td>أ ع د 2845</td><td>2004</td></tr>
-          <tr><td>12</td><td>بكب غمارتين</td><td>جريت وول</td><td>ب ر ر 9449</td><td>2020</td></tr>
-          <tr><td>13</td><td>جمس تاهو</td><td>شيفورليه</td><td>ب ل ق 6948</td><td>2012</td></tr>
-          <tr><td>14</td><td>كورولا</td><td>تويوتا</td><td>ح ه ح 7152</td><td>2015</td></tr>
-          <tr><td>15</td><td>كابتيفا</td><td>شيفورليه</td><td>ر ص ب 9421</td><td>2024</td></tr>
-          <tr><td>16</td><td>حافله 25 راكب</td><td>هونداي</td><td>أ ع د 1633</td><td>2009</td></tr>
-          <tr><td>17</td><td>حافله كوستر 27</td><td>تويوتا</td><td>أ م ط 2829</td><td>2012</td></tr>
-          <tr><td>18</td><td>ديانا</td><td>ايسوزو</td><td>أ ل ل 1321</td><td>2011</td></tr>
-          <tr><td>19</td><td>ديانا</td><td>ايسوزو</td><td>أ ه ب 5130</td><td>2013</td></tr>
-          <tr><td>20</td><td>قلاب سكس</td><td>مان</td><td>س ن 4172</td><td>2008</td></tr>
-          <tr><td>21</td><td>قلاب سكس</td><td>مان</td><td>ا س ن 4372</td><td>2009</td></tr>
-          <tr><td>22</td><td>قلاب سكس</td><td>مان</td><td>ا س ن 4064</td><td>2008</td></tr>
-          <tr><td>23</td><td>بوكلين 323</td><td>CAT</td><td>CAT0323DHPBE03262</td><td>2011</td></tr>
-          <tr><td>24</td><td>بوكلين 320</td><td>CAT</td><td>CAT0320BCKGF05406</td><td>2010</td></tr>
-          <tr><td>25</td><td>بوكلين 323</td><td>CAT</td><td>CAT0323DKPBE03253</td><td>2012</td></tr>
-          <tr><td>26</td><td>بوكلين 320</td><td>CAT</td><td>CAT0320DKKZF00487</td><td>2012</td></tr>
-          <tr><td>27</td><td>بوكلين 210</td><td>فولفو</td><td>VCEC210BA00070233</td><td>2010</td></tr>
-          <tr><td>28</td><td>بوكلين 210</td><td>فولفو</td><td>VCEC210BE00019887</td><td>2008</td></tr>
-          <tr><td>29</td><td>بلدوزر D9R</td><td>CAT</td><td>CAT00D9RCWDM03554</td><td>2016</td></tr>
-          <tr><td>30</td><td>بلدوزر D9N</td><td>CAT</td><td>6XJ00619</td><td>2015</td></tr>
-          <tr><td>31</td><td>بلدوزر D9R</td><td>CAT</td><td>8BL01058</td><td>2015</td></tr>
-          <tr><td>32</td><td>بلدوزر D9R</td><td>CAT</td><td>8BL01284</td><td>2015</td></tr>
-          <tr><td>33</td><td>جريدر 14G</td><td>CAT</td><td>CAT0014MER9J00721</td><td>2012</td></tr>
-          <tr><td>34</td><td>جريدر 14G</td><td>CAT</td><td>96U2908</td><td>1978</td></tr>
-          <tr><td>35</td><td>شيول 950H</td><td>CAT</td><td>CAT0950HEJAD01563</td><td>2012</td></tr>
-          <tr><td>36</td><td>شيول 966H</td><td>CAT</td><td>CAT0966HCA7AL02274</td><td>2012</td></tr>
-          <tr><td>37</td><td>شيول 966H</td><td>CAT</td><td>CAT0966HTA6J01458</td><td>2016</td></tr>
-          <tr><td>38</td><td>شيول</td><td>دايو-ميجا</td><td>DHKLSYOP50003324</td><td>2005</td></tr>
-          <tr><td>39</td><td>شيول</td><td>كوزاكي</td><td>97C15114</td><td>1997</td></tr>
-          <tr><td>40</td><td>شيول</td><td>فولفو</td><td>UCEL150GK00018925</td><td>2014</td></tr>
-          <tr><td>41</td><td>رصاصه ترابيه</td><td>هام</td><td>H2060335</td><td>2011</td></tr>
-          <tr><td>42</td><td>رصاصة ترابيه</td><td>دينباك</td><td>65320423</td><td>2003</td></tr>
-          <tr><td>43</td><td>رافعة شوكية 3 طن</td><td>ميتسوبيشي</td><td>-</td><td>-</td></tr>
-          <tr><td>44</td><td>كرين 50 طن</td><td>زوم لاين</td><td>-</td><td>عدد 1</td></tr>
-          <tr><td>45</td><td>حفار الشنيور (مكدسة اوتاد) Pile Drilling</td><td>Rotary</td><td>-</td><td>عدد 1</td></tr>
-          <tr><td>46</td><td>تور لايت</td><td>-</td><td>-</td><td>عدد 2</td></tr>
-          <tr><td>47</td><td>مولد كهرباء 720 KW</td><td>CAT</td><td>-</td><td>عدد 2</td></tr>
-          <tr><td>48</td><td>مكينة لحام</td><td>ملير</td><td>-</td><td>عدد 2</td></tr>
-          <tr><td>49</td><td>كسارة</td><td>متحرك</td><td>-</td><td>عدد 3</td></tr>
-          <tr><td>50</td><td>كسارة كبيره</td><td>ثابت</td><td>-</td><td>عدد 2</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- Professional BOQ Section -->
-  <section id="boq" class="section">
-    <div class="section-head fade-in">
-      <span>06</span>
-      <h2 data-i18n="boqTitle">نموذج جدول الكميات والمقايسة (BOQ)</h2>
-    </div>
-    <p class="lead fade-in" data-i18n="boqLead">قم بإدخال أسعار الوحدة في الخانات المخصصة لحساب الإجمالي التلقائي لبنود المشاريع.</p>
-    
-    <div class="data-table-container fade-in">
-      <table class="data-table" id="boqTable">
-        <thead>
-          <tr>
-            <th data-i18n="boqCol1">رقم</th>
-            <th data-i18n="boqCol2">وصف البند</th>
-            <th data-i18n="boqCol3">الوحدة</th>
-            <th data-i18n="boqCol4">الكمية</th>
-            <th data-i18n="boqCol5">سعر الوحدة (ر.س)</th>
-            <th data-i18n="boqCol6">الإجمالي (ر.س)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1.1</td>
-            <td data-i18n="boqItem1">أعمال الهدم والإزالة للمباني الخرسانية ورفع المخلفات</td>
-            <td data-i18n="boqUnit1">م٢</td>
-            <td class="qty">24500</td>
-            <td><input type="number" class="price-input" min="0" placeholder="0"></td>
-            <td class="row-total">0.00</td>
-          </tr>
-          <tr>
-            <td>2.1</td>
-            <td data-i18n="boqItem2">توريد وتركيب مضخات المياه المبردة (Primary Chilled Water Pumps)</td>
-            <td data-i18n="boqUnit2">عدد</td>
-            <td class="qty">4</td>
-            <td><input type="number" class="price-input" min="0" placeholder="0"></td>
-            <td class="row-total">0.00</td>
-          </tr>
-          <tr>
-            <td>3.1</td>
-            <td data-i18n="boqItem3">توريد وتركيب أنظمة الإطفاء التلقائي بغاز CO2</td>
-            <td data-i18n="boqUnit3">مقطوعية</td>
-            <td class="qty">1</td>
-            <td><input type="number" class="price-input" min="0" placeholder="0"></td>
-            <td class="row-total">0.00</td>
-          </tr>
-          <tr>
-            <td>4.1</td>
-            <td data-i18n="boqItem4">توريد وتركيب كابلات جهد منخفض ولوحات تحكم</td>
-            <td data-i18n="boqUnit4">م.ط</td>
-            <td class="qty">1200</td>
-            <td><input type="number" class="price-input" min="0" placeholder="0"></td>
-            <td class="row-total">0.00</td>
-          </tr>
-          <tr class="total-row">
-            <td colspan="5" style="text-align: left; padding-left: 20px;" data-i18n="boqTotalLabel">الإجمالي الكلي (غير شامل الضريبة):</td>
-            <td id="grandTotal">0.00</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- زر تحميل قائمة المعدات كملف PDF -->
+    <div class="download-equipment-wrap fade-in" style="text-align: center; margin-top: 40px;">
+      <a href="equipment_list.pdf" target="_blank" class="btn" download="NAL_AL_TSHEED_EQUIPMENT.pdf" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 25px; font-size: 1.1rem;">
+        <span>📄</span> <span data-i18n="eqDownloadBtn">تحميل القائمة التفصيلية للمعدات (PDF)</span>
+      </a>
     </div>
   </section>
 
   <!-- Interactive Cost Estimator -->
-  <section id="estimator" class="section light">
+  <section id="estimator" class="section">
     <div class="section-head fade-in">
-      <span>07</span>
+      <span>06</span>
       <h2 data-i18n="estTitle">حاسبة دراسة التكلفة</h2>
     </div>
     <p class="lead fade-in" data-i18n="estLead">حدد تفاصيل عملك بدقة ليصلك عرض سعر ودراسة كميات منظمة ومباشرة من مهندسي شركة نال التشيد.</p>
@@ -468,9 +330,9 @@
   </section>
 
   <!-- FAQ Section -->
-  <section id="faq" class="section">
+  <section id="faq" class="section light">
     <div class="section-head fade-in">
-      <span>08</span>
+      <span>07</span>
       <h2 data-i18n="sec3Title">الأسئلة الشائعة</h2>
     </div>
     <div class="interactive-grid">
@@ -486,9 +348,9 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section light">
+  <section id="contact" class="section">
     <div class="section-head fade-in">
-      <span>09</span>
+      <span>08</span>
       <h2 data-i18n="sec4Title">تواصل معنا</h2>
     </div>
     <p class="lead fade-in" data-i18n="sec4Lead">سعداء بتواصلكم ومستعدون لمناقشة كافة تفاصيل مشروعكم القادم.</p>
@@ -572,32 +434,6 @@
     <p data-i18n="rights">جميع الحقوق محفوظة © شركة نال التشيد للمقاولات المعمارية</p>
   </footer>
 
-  <!-- Script for BOQ Calculation (أضفه في ملف script.js أو اتركه هنا إذا كنت تفضل ذلك) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // BOQ Calculator Logic
-      const priceInputs = document.querySelectorAll('.price-input');
-      const grandTotalEl = document.getElementById('grandTotal');
-
-      if(priceInputs.length > 0) {
-        function calculateTotals() {
-            let grandTotal = 0;
-            priceInputs.forEach(input => {
-                const row = input.closest('tr');
-                const qty = parseFloat(row.querySelector('.qty').textContent) || 0;
-                const price = parseFloat(input.value) || 0;
-                const total = qty * price;
-                
-                row.querySelector('.row-total').textContent = total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-                grandTotal += total;
-            });
-            grandTotalEl.textContent = grandTotal.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-        }
-        priceInputs.forEach(input => input.addEventListener('input', calculateTotals));
-      }
-    });
-  </script>
-  
   <script src="script.js"></script>
 </body>
 </html>
