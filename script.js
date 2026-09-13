@@ -108,7 +108,23 @@ const translations = {
     modalDesc: "يمكنك استعراض أو تحميل الكتالوج الشامل لأسطول المعدات والمشاريع الخاص بالشركة بصيغة PDF.",
     modalDownload: "تحميل الملف التعريفي (PDF)",
     modalPreview: "معاينة بعض صفحات البروفايل:",
-    rights: "جميع الحقوق محفوظة © شركة نال التشيد للمقاولات المعمارية"
+    rights: "جميع الحقوق محفوظة © شركة نال التشيد للمقاولات المعمارية",
+    gov5Badge: "القطاع الصحي والمجمعات الطبية",
+    gov5Title: "أعمال الهدم والإزالة بمجمع الملك فهد الطبي",
+    gov5Desc: "تنفيذ مشروع هدم وإزالة 49 مبنى خرساني مسلح (بمساحة إجمالية 24,500 م²) لصالح مستشفى مجمع الملك فهد الطبي بالظهران، مع الالتزام التام باشتراطات السلامة والجدول الزمني.",
+    gov5Lbl1: "الجهة:", gov5Val1: "مستشفى مجمع الملك فهد الطبي",
+    gov5Lbl2: "النطاق:", gov5Val2: "أعمال هدم وإزالة وترحيل",
+    gov5Lbl3: "الموقع:", gov5Val3: "الظهران",
+    gov6Badge: "الأعمال الكهروميكانيكية (MEP)",
+    gov6Title: "تجهيزات الأنظمة الكهربائية والميكانيكية",
+    gov6Desc: "تنفيذ التمديدات الكهربائية الداخلية، وحدات UPS، الكابلات، لوحات إنذار الحريق وأنظمة الإطفاء (CO2)، ومضخات المياه المبردة للمشاريع الإنشائية.",
+    gov6Lbl1: "القطاع:", gov6Val1: "تجهيزات المباني المتكاملة",
+    gov6Lbl2: "النطاق:", gov6Val2: "توريد وتركيب أنظمة كهروميكانيكية",
+    gov6Lbl3: "الحالة:", gov6Val3: "أعمال دقيقة وفق المقايسات",
+    p7Cap: "أعمال الهدم والإزالة الميدانية",
+    p8Cap: "تمديدات الأنظمة الكهروميكانيكية",
+    p9Cap: "أعمال الحفر والتسويات الترابية",
+    p10Cap: "الإنشاءات المعدنية وأعمال اللحام"
   },
   en: {
     brand: "Nal Al Tsheed",
@@ -219,7 +235,23 @@ const translations = {
     modalDesc: "You can view or download the comprehensive catalogue of equipment and projects in PDF format.",
     modalDownload: "Download Profile (PDF)",
     modalPreview: "Preview Profile Pages:",
-    rights: "All rights reserved © Nal Al Tsheed Architectural Contracting Company"
+    rights: "All rights reserved © Nal Al Tsheed Architectural Contracting Company",
+    gov5Badge: "Healthcare & Medical Complexes",
+    gov5Title: "Demolition & Removal Works at King Fahd Medical Complex",
+    gov5Desc: "Executing the demolition and removal of 49 reinforced concrete buildings (totaling 24,500 m²) for King Fahd Military Medical Complex in Dhahran, with strict adherence to safety and schedules.",
+    gov5Lbl1: "Entity:", gov5Val1: "King Fahd Medical Complex",
+    gov5Lbl2: "Scope:", gov5Val2: "Demolition, Removal & Clearance",
+    gov5Lbl3: "Location:", gov5Val3: "Dhahran",
+    gov6Badge: "Electromechanical Works (MEP)",
+    gov6Title: "Electrical & Mechanical Systems Installation",
+    gov6Desc: "Execution of internal electrical installations, UPS units, low-voltage cables, fire alarm panels, CO2 fire extinguishing systems, and chilled water pumps.",
+    gov6Lbl1: "Sector:", gov6Val1: "Integrated Building Systems",
+    gov6Lbl2: "Scope:", gov6Val2: "Supply & Install MEP Systems",
+    gov6Lbl3: "Status:", gov6Val3: "Precise Execution per BOQ",
+    p7Cap: "Field Demolition & Removal Works",
+    p8Cap: "Electromechanical System Installations",
+    p9Cap: "Excavation & Earthwork",
+    p10Cap: "Metal Construction & Welding Works"
   }
 };
 
